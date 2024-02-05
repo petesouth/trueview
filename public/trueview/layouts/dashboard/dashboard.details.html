@@ -1,0 +1,125 @@
+<div class="dashboard-container padded-content-page" layout="column" style="min-width: 500px;" ng-cloak>
+    <div id="anchorstorage" class="anchor">
+        <div>
+            <h2>Storage</h2>
+        </div>
+        <md-card class="md-fn10-theme dash-card">
+            <md-card-content class="total">
+                <div layout="row" layout-xs="column" layout-wrap>
+                    <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="server in servers">
+                        <md-card class="md-fn10-theme dash-sub-card">
+                            <md-card-header>
+                                <md-card-header-text class="md-fn10-theme">
+                                    <span class="md-subtitle">{{server.hostname}}</span>
+                                </md-card-header-text>
+                            </md-card-header>
+
+                            <md-card-content>
+                                <iframe ng-src="" height="150" width="100%" frameBorder="0"></iframe>
+                            </md-card-content>
+
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-subhead"></span>
+                                </md-card-title-text>
+                            </md-card-title>
+                        </md-card>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <div id="anchoriscsi" class="anchor">
+        <div>
+            <h2>iSCSI</h2>
+        </div>
+        <md-card class="md-fn10-theme dash-card">
+            <md-card-content class="total">
+                <div layout="row" layout-xs="column" layout-wrap>
+                    <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="server in servers">
+                        <md-card class="md-fn10-theme dash-sub-card">
+                            <md-card-header>
+                                <md-card-header-text class="md-fn10-theme">
+                                    <span class="md-subtitle">{{server.hostname}}</span>
+                                </md-card-header-text>
+                            </md-card-header>
+
+                            <md-card-content>
+                                <iframe ng-src="" height="150" width="100%" frameBorder="0"></iframe>
+                            </md-card-content>
+
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-subhead"></span>
+                                </md-card-title-text>
+                            </md-card-title>
+                        </md-card>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <div id="anchorconnections" class="anchor">
+        <div>
+            <h2>Connections</h2>
+        </div>
+        <md-card class="md-fn10-theme dash-card">
+            <md-card-content class="total">
+                <div layout="row" layout-xs="column" layout-wrap>
+                    <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="server in servers">
+                        <md-card class="md-fn10-theme dash-sub-card">
+                            <md-card-header>
+                                <md-card-header-text class="md-fn10-theme">
+                                    <span class="md-subtitle">{{server.hostname}}</span>
+                                </md-card-header-text>
+                            </md-card-header>
+
+                            <md-card-content>
+                                <iframe ng-src="" height="100" width="100%" frameBorder="0"></iframe>
+                            </md-card-content>
+
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-subhead"></span>
+                                </md-card-title-text>
+                            </md-card-title>
+                        </md-card>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <div id="anchorbandwidth" class="anchor">
+        <div>
+            <h2>Bandwidth</h2>
+        </div>
+        <md-card class="md-fn10-theme dash-card">
+            <md-card-content class="total">
+                <div layout="row" layout-xs="column" layout-wrap>
+                    <div flex="25" flex-xs="100" flex-sm="50" ng-repeat="server in servers">
+                        <md-card class="md-fn10-theme dash-sub-card">
+                            <md-card-header>
+                                <md-card-header-text class="md-fn10-theme">
+                                    <span class="md-subtitle">{{server.hostname}}</span>
+                                </md-card-header-text>
+                            </md-card-header>
+
+                            <md-card-content>
+                                <iframe ng-src="" height="100" width="100%" frameBorder="0"></iframe>
+                            </md-card-content>
+
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-subhead"></span>
+                                </md-card-title-text>
+                            </md-card-title>
+                        </md-card>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

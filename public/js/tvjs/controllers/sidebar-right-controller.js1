@@ -1,0 +1,52 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name SidebarRightController
+ * @module tv
+ * @kind function
+ *
+ * @description
+ *
+ * Handles the admin view
+ */
+angular.module('tv').
+controller('SidebarRightController', function ($scope, $http, $mdSidenav, $state, API_CONFIG,$rootScope,$filter,$sce) {
+    console.log("sidebarRight controller");
+
+    $scope.$on('activeServer', function($event, data) {
+        console.log("on activeServer",data);
+        $scope.activeTab = 0;
+        $scope.server = data;
+
+        $scope.chart_type = "realtime";
+
+        var grafanaserver = $rootScope.configInfo.admin.grafanaserver;
+
+
+        $scope.trustedRealtimeDashboard = function() {
+            //var full_src = "/monitcommando/#/realtimedash?host=" + $scope.server.id + "&ifdb=" + influxdbserver;
+            var full_src = grafanaserver + "/dashboard/script/server_host_dynamic_dash.js?server_host_name=" + $scope.server.system_serial; 
+            return $sce.trustAsResourceUrl(full_src);
+        };
+
+        $scope.trustedHistoricalDashboard = function () {
+            var full_src = grafanaserver + "/dashboard/db/" + $scope.server.id + "_general_metrics";
+            return $sce.trustAsResourceUrl(full_src);
+        };
+
+        $scope.tasks = $filter('filter')($rootScope.tasks,$scope.server.id);
+        console.log("tasks in sidebarRightcontroller",$scope.tasks);
+    });
+
+
+
+    // add an event to switch tabs (used when user clicks a menu item before sidebar opens)
+    $scope.$on('triSwitchNotificationTab', function($event, tab) {
+        $scope.notificationsTab = tab;
+    });
+
+    $scope.close = function () {
+        $mdSidenav('notifications').close();
+    };
+});

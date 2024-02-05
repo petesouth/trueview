@@ -1,0 +1,19 @@
+<div layout="row" class="full-height">
+    <md-sidenav layout class="admin-sidebar-left md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" ui-view="sidebarLeft" ng-class="menuClass()" ng-mouseover="activateHover()" ng-mouseleave="removeHover()"></md-sidenav>
+    <!-- main content lola -->
+    <div id="admin-panel" layout="column" flex>
+        <!-- loading animation -->
+        <!--tri-loader></tri-loader-->
+
+        <!-- top toolbar ng-attr-md-scroll-shrink="{{toolbarShrink}}" -->
+        <md-toolbar class="admin-toolbar" md-theme="{{tvSkin.elements.toolbar}}" ui-view="toolbar" ng-class="toolbarTypeClass()"></md-toolbar>
+        <!-- scrollable content -->
+        <md-content flex layout="column">
+            <!-- main view content  -->
+            <div admin-panel-content flex ui-view="content"></div>
+        </md-content>
+    </div>
+
+    <!-- right sidebar -->
+    <md-sidenav layout layout-fill class="md-sidenav-right md-whiteframe-z2 md-sidenav-card" md-component-id="notifications" ui-view="sidebarRight"></md-sidenav>
+</div>

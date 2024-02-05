@@ -1,0 +1,84 @@
+.whiteframedemoBasicUsage md-whiteframe {
+  background: #fff;
+  margin: 20px;
+  padding: 20px; }
+// Dashboard
+.record {
+  display:block;
+  font-size:20px;
+}
+.profile {
+  background:black;
+  color:white;
+  font-size:100px;
+}
+.view-container {
+  position:relative;
+}
+.view-container > .view.ng-animate {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  min-height:500px;
+}
+.view.ng-enter, .view.ng-leave,
+.record.ng-anchor {
+  transition:0.5s linear all;
+}
+.view.ng-enter {
+  transform:translateX(100%);
+}
+.view.ng-enter.ng-enter-active, .view.ng-leave {
+  transform:translateX(0%);
+}
+.view.ng-leave.ng-leave-active {
+  transform:translateX(-100%);
+}
+.record.ng-anchor-out {
+  background:red;
+}
+
+// Dashboard Container
+.dashboard-container {
+  [layout-margin] {
+    margin: 0px;
+  }
+}
+// - Chart Container
+.dashboard-fullwidth-chart {
+  .chart-container {
+    position: relative;
+    left: -5px;
+    bottom: -5px;
+    width: calc(100% + 10px);
+  }
+}
+
+.dashboard-no-bar-tabs {
+  md-tabs-wrapper {
+    display: none;
+  }
+}
+.google-chart {
+  height: 100%;
+  width: 100%;
+}
+
+// Social Dashboard
+.tabs-tall {
+  md-pagination-wrapper, md-tabs-canvas {
+    height: 72px;
+  }
+}
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+.tabsdemoDynamicHeight md-content md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1; }
+.tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+  background: white; }
+.tabsdemoDynamicHeight md-content h1:first-child {
+  margin-top: 0; }
+

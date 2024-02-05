@@ -1,0 +1,29 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    <div>
+        <h2>Uploaded Files</h2>
+    </div>
+    <md-card class="md-fn10-theme dash-table">
+        <md-card-header class="dash-table">
+            <md-card-header-text>
+                <div layout="row">
+                    <div flex="30">Description</div>
+                    <div flex="50">File</div>
+                    <div flex="20">Date Uploaded</div> 
+                </div>
+            </md-card-header-text>
+        </md-card-header>
+
+       <md-card-content style="overflow: hidden;">
+            <md-list>
+                <md-list-item ng-repeat="logupload in logUploads">
+                	<div flex="30">{{logupload.description}}</div>
+                	<div flex="50"><a href="/api/downloads/{{logupload.filename}}">{{logupload.origfilename}}</a></div>
+                	<div flex="20">{{logupload.created_at}}</div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>                                                                                                                                              </md-card>    
+    
+               
+    
+    
+</div>

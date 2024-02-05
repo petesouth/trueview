@@ -1,0 +1,34 @@
+
+GOOS=freebsd
+export GOOS
+
+CGO_ENABLED=0
+export CGO_ENABLED
+
+
+GOARCH=amd64
+export GOARCH
+
+GOROOT_BOOTSTRAP=/root/go1.4
+export GOROOT_BOOTSTRAP
+
+GOROOT=/root/gosrc/go
+export GOROOT
+
+GOPATH=$HOME/go
+export GOPATH
+
+#Adding GO BIN to my path.
+PATH=./:$PATH:$GOROOT/bin:$GOPATH/bin
+export path
+
+
+
+echo PATH=$PATH
+echo GOPATH=$GOPATH
+echo GOROOT=$GOROOT
+echo GOARCH=$GOARCH
+echo GOOS=$GOOS
+echo CGO_ENABLED=$CGO_ENABLED
+echo GOROOT_BOOTSTRAP=$GOROOT_BOOTSTRAP
+

@@ -1,0 +1,11 @@
+CollectD Config
+
+
+hostname="whatever hostname"
+
+
+LoadPlugin Network
+
+<Plugin Network>
+    Server "trueview-demo.freehive.io" "25826"
+</Plugin>

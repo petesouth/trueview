@@ -1,0 +1,37 @@
+{
+
+
+	"rows": [
+		[	
+			{
+				"title": "CPU Usage",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=10&ps=1&fq=4000&mc=%5B%22usage_system:0%22,%22usage_user:1%22%5D&sju=/json_repo/{{hostname}}_overview2_cpu.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme01&maxY=100&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Cpu Percent"
+			},
+			
+			{
+				"title": "Memory Usage",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=10&ps=1&fq=4000&mc=%5B%22used_percent:0%22%5D&sju=/json_repo/{{hostname}}_overview2_memory.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme09&maxY=100&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Used Memory Percent"
+			},
+			{ 
+				"title" : "Storage Used of 34.11 GB",
+				"flex_width": "25",
+				"chart_height" : "350",
+				"url" : "/monitcommando/index.html#/fullpiechartcontrol?host=&dr=true&dr=true&mvps=50&ps=1&fq=4000&mc=%5B%22bytes-used:0%22%5D&sju=%2Fjson_repo%2F{{hostname}}_overview2_storage_gauge.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=stackedsplinearea&bigN=0&bigS=0&x_title=&total=34 GB"
+			},
+			{
+				"title" : "Connections",
+				"flex_width": "25",
+				"chart_height" : "350",
+				"url" : "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22ESTABLISHED:2%22,%22LISTEN:6%22,%22SYN_RECV:7%22,%22SYN_SENT:8%22%5D&sju=%2Fjson_repo%2F{{hostname}}_overview_tcp_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme19&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Number%20Of"
+			}
+		
+		]
+		
+	]
+}
+
+

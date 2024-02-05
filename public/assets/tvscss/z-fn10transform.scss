@@ -1,0 +1,153 @@
+body {
+    background-color: #15171B;
+    background-size: cover, 310px 310px;
+    background-image: radial-gradient( circle farthest-corner at center -5%, rgba(255, 255, 255, .1), rgba(0, 0, 0, .05) ), url(../../assets/images/bg.png);
+    min-height: 100%;
+    background-attachment:fixed;
+    font-weight: 400;
+}
+
+
+body.login {
+    background-image: radial-gradient(rgba(43, 156, 216,.3),rgba(0,0,0,.5) 50%), url(../../assets/images/bg.png);
+}
+
+button, select, html, textarea, input {
+    font-family: Lato, RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
+}
+
+md-content.md-default-theme, md-content,
+md-content.md-fn10_content-theme,
+.admin-panel-content {
+    background-color: transparent;
+}
+
+md-content.md-fn10_content-theme,
+svg {
+    color: #e9fdff;
+}
+
+#login-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-content {
+    padding: 16px 16px 32px;
+    background-color: #f5f5f5;
+    text-align: center;
+    border-radius: 4px;
+}
+
+md-toolbar.md-fn10_tool-theme,
+{
+    background-image: url(../../assets/images/bg.png);
+    background-size: 310px 195px;
+    border-bottom: 2px solid #0f1213;
+}
+
+
+.product-icon {
+    background-image: url(../../assets/images/trueview_icon.svg);
+    text-indent: 40px;
+    background-repeat: no-repeat;
+}
+
+#footer {
+    border-top: 2px solid #0f1213;  
+}
+
+
+md-toolbar.md-theme-fn10.md-fn10-theme {
+    background-color: #404040 !important;
+    color: #e0e5e5 !important;
+}
+
+md-list-item.md-fn10-theme,
+md-content.md-theme-fn10.md-fn10-theme,
+.fn10bg {
+    background-color: rgba(33, 33, 33, 0.701961);
+    color: hsla(0,0%,100%,.5);
+}
+
+md-icon.md-fn10-theme,
+md-input-container.md-fn10-theme label,
+md-input-container.md-fn10-theme input,
+md-input-container.md-fn10-theme.md-input-has-value label,
+md-input-container.md-fn10-theme.md-input-has-value input {
+    color: hsla(0,0%,100%,.5) ;
+}
+
+md-icon.md-fn10_content-theme,
+md-input-container.md-fn10_content-theme label,
+md-input-container.md-fn10_content-theme input,
+md-input-container.md-fn10_content-theme.md-input-has-value label,
+md-input-container.md-fn10_content-theme.md-input-has-value input {
+    color: hsla(0,0%,100%,.5);
+}
+
+md-card.md-fn10-theme:not(.fn10bg) {
+    background-color: transparent;
+}
+
+button.md-button.md-fn10-theme:hover {
+    background-color: rgba(158,158,158,0.2) !important; //#33373b;
+    color: #e0e5e5;
+}
+
+.nvd3-charts {
+    display: flex;
+    flex-direction: row;
+}
+
+button.md-button.md-fn10-theme.md-primary.md-raised {
+    background-color: rgb(43, 156, 216);
+    background-image: linear-gradient(transparent,rgba(0,0,0,.2));
+}
+
+button.md-button.md-fn10-theme.md-primary.md-raised:hover {
+    background-color: rgb(43, 156, 216);
+}
+
+md-card.md-fn10-theme.md-fn10_content-theme {
+    color: #e9fdff;
+}
+
+md-card.md-theme-fn10.md-fn10-theme.md-padding._md.md-fn10_content-theme {
+        background-color: rgba(33, 33, 33, 0.701961);
+            color: hsla(0,0%,100%,.5);
+        }
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon, md-input-container:not(.md-input-invalid).md-input-focused md-icon {
+    color: rgb(43, 156, 216);
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: rgb(43, 156, 216);
+}
+
+md-divider.md-default-theme, md-divider {
+    border-top-color: rgba(0,0,0,0.12);
+}
+
+md-select-menu.md-fn10_content-theme md-content md-option:not([disabled]):hover {
+    background-color: rgba(158,158,158,0.2) !important; //#33373b;
+    color: #e0e5e5;
+}
+
+md-option {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+md-select-menu.md-fn10_content-theme md-content md-option:not([disabled]):focus,
+md-select-menu.md-fn10_content-theme md-content md-option:not([disabled]):hover {
+        background: rgba(158, 158, 158, 0.2);
+}
+
+md-select-menu.md-fn10_content-theme md-content{
+        background-color: #15171B;
+}
+md-select-value:not([disabled]) {
+        color: rgba(255, 255, 255, 0.5) !important;
+}

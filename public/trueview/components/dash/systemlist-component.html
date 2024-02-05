@@ -1,0 +1,47 @@
+  <md-card class="md-fn10-theme dash-table">
+      <md-card-header class="dash-table">
+          <md-card-header-text>
+              <div layout="row">
+                  <div flex="5">
+                  </div>
+                  <div flex="15">System</div>
+                  <div flex="10">Load</div>
+                  <div flex="10">Capacity</div>
+                  <div flex="10">Latency</div>
+                  <div flex="10">Throughput</div>
+                  <div flex="10"><span style="padding-left: 20px;">CPU</span></div>
+                  <div flex="10">Memory</div>
+                  <div flex="10">OS</div>
+              </div>
+          </md-card-header-text>
+      </md-card-header>
+
+
+      <md-card-content style="overflow: hidden; padding-top: 10px;">
+         <md-list>
+             <md-list-item  ng-repeat="server in $ctrl.filteredServers"
+                            ng-class="dash-table-row-even"
+                            ng-click="$ctrl.go(server,$event)">
+                 <md-divider></md-divider>
+                 <div flex="5">
+                 </div>
+
+                 <div flex="15"><span style="font-size: small;">{{server.hostname}}</span></div>
+		<div flex="10"><span><iframe id="{{server.id}}_Load" height="50" width="120" frameBorder="0" allowtransparency="true"></iframe></span></div>
+                	<div flex="10"><span><iframe id="{{server.id}}_Capacity" height="50" width="120" frameBorder="0" allowtransparency="true"></iframe></span></div>
+                 <div flex="10"><span><iframe id="{{server.id}}_Latency" height="50" width="120" frameBorder="0" allowtransparency="true"></iframe></span></div>
+                 <div flex="10"><span><iframe id="{{server.id}}_Throughput" height="50" width="120" frameBorder="0" allowtransparency="true"></iframe></span></div>
+                 <div flex="10"><span><iframe id="{{server.id}}_Cpu" height="50" width="120" frameBorder="0" allowtransparency="true"></iframe></span></div>
+                 <div flex="10"><span><iframe id="{{server.id}}_Memory" height="50" width="120" frameBorder="0" allowtransparency="true"></iframe></span></div>
+               	 <div flex="10"><span style="font-size: small;">TNAS-9.10</span></div>
+             </md-list-item>
+         </md-list>
+		 
+     </md-card-content>
+     
+     <md-card-content style="overflow: hidden;">
+         <div layout="row" layout-align="center center" class="dash-table"  ng-show="$ctrl.servers.length/$ctrl.numPerPage > 1" >
+             <ul uib-pagination total-items="$ctrl.totalItems" ng-model="$ctrl.currentPage" ng-change="$ctrl.changePagination()" max-size="1" items-per-page="$ctrl.numPerPage" class="pagination-sm" boundary-link-numbers="true"></ul>
+         </div>
+     </md-card-content>
+ </md-card>

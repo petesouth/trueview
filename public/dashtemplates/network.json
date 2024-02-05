@@ -1,0 +1,49 @@
+{
+	"rows": [
+		[	{
+				"title": "Newtork Traffic TX/RX",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22TX if_errors:0%22,%22TX if_octets:1%22,%22TX if_packets:2%22,%22RX if_errors:3%22,%22RX if_octets:4%22,%22RF if_packets:5%22%5D&sju=/json_repo/{{hostname}}overview_tx_rx_chart.json&shd=true&shl=true&rmb=1&rdb=1000000&schemeName=scheme11&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Per Million"
+			},
+			{
+				"title": "Tcp Connections",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22CLOSE_WAIT:0%22,%22CLOSING:1%22,%22ESTABLISHED:2%22,%22IN_WAIT1:3%22,%22IN_WAIT2:4%22,%22LAST_ACK:5%22,%22LISTEN:6%22,%22SYN_RECV:7%22,%22SYN_SENT:8%22,%22TIME_WAIT:9%22%5D&sju=/json_repo/{{hostname}}overview_tcp_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme19&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Number Of"
+			}
+		],
+		[
+			{
+				"title": "Load",
+				"flex_width": "100",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22shortterm:0%22,%22midterm:1%22,%22longterm:2%22%5D&sju=/json_repo/{{hostname}}overview_load_chart.json&shl=true&shd=true&rmb=100&rdb=1&schemeName=scheme08&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Percent&maxY=100"
+			}
+		],
+		[
+			{
+				"title": "Interface TX",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22if_errors:0%22,%22if_octets:1%22,%22if_packets:2%22%5D&sju=/json_repo/{{hostname}}overview_tx_rx_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme11&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Summary"
+			},
+			{
+				"title": "Interface RX",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22if_errors:3%22,%22if_octets:4%22,%22if_packets:5%22%5D&sju=/json_repo/{{hostname}}overview_tx_rx_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Summary"
+			}
+		],
+		[
+			{
+				"title": "uptime",
+				"flex_width": "100",
+				"chart_height": "300",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22uptime_average:0%22%5D&sju=/json_repo/{{hostname}}overview_uptime_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme10&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=uptime"
+			}
+		]
+	]
+}
+
+

@@ -1,0 +1,98 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    <div class="sliderdemoBasicUsage">
+        <md-card class="md-fn10-theme">
+            <md-toolbar class="md-theme-fn10 md-fn10-theme">
+                <h2 class="md-toolbar-tools">
+                    <span>Profile Setting</span>
+                </h2>
+            </md-toolbar>
+
+            <md-content class="md-theme-fn10 md-fn10-theme">
+                <form ng-submit="" name="profileForm" class="md-padding">
+                    <div>
+                        <md-input-container class="md-icon-float md-block md-fn10-theme">
+                            <md-icon class="md-fn10-theme" md-font-icon="fa fa-building-o" class="company"></md-icon>
+                            <input ng-model="user.company" type="text" placeholder="company" readonly>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block md-fn10-theme">
+                            <md-icon class="md-fn10-theme" md-font-icon="fa fa-user-o" class="name"></md-icon>
+                            <input ng-model="user.name" type="text" placeholder="Name">
+                            <div ng-message="name_err" style="color:red">{{name_err}}</div>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block md-fn10-theme">
+                            <md-icon class="md-fn10-theme" md-font-icon="fa fa-envelope-o" class="email"></md-icon>
+                            <input ng-model="user.email" type="email" placeholder="Email">
+                            <div ng-message="email_err" style="color:red">{{email_err}}</div>
+                        </md-input-container>
+                        
+                          <md-input-container class="md-icon-float md-block md-fn10-theme">
+                            <md-icon class="md-fn10-theme" md-font-icon="fa fa-key" class="name"></md-icon>
+                           <input ng-model="user.api_token" type="text" disabled="disabled" style="color: rgba(255, 255, 255, 0.5);">
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="update_profile(user)">Update</md-button>
+                    </div>
+                </form>
+            </md-content>
+
+        </md-card>
+    </div>
+        
+    <div layout="row">
+    	<br/>
+    </div>
+    
+    <div layout="row">
+    	<br/>
+    </div>
+    
+    <div class="sliderdemoBasicUsage">
+        <md-card class="md-fn10-theme">
+            <md-toolbar class="md-theme-fn10 md-fn10-theme">
+                <h2 class="md-toolbar-tools">
+                    <span>API CURL Examples</span>
+                </h2>
+            </md-toolbar>
+
+            <md-content class="md-theme-fn10 md-fn10-theme">
+              	<div style="padding: 20px;">
+              		<span style="color: white">uploadfile</span>  <br/><br/>curl -POST -v --form "uploadedFile=@file.txt;filename=file.txt"  --form "desc=whatever" --form "org_id=12345" --form "filetype=1" http://TRUEVIEW_SERVER/api/uploadfile?api_token=USER_API_TOKEN
+              	</div>
+            </md-content>
+      
+			<md-content class="md-theme-fn10 md-fn10-theme">
+              	<div style="padding: 20px;">
+              		<span style="color: white">login get jwt_token</span> <br/><br/> curl -H "Content-Type: application/json" -X POST -d '{"email":"admin@tv.com","password":"admin"}' http://192.168.43.50:8000/api/login
+					<br/>
+					Prints <br/> <br/> {"token":"THE_USERS_JWT_API_TOKEN"}   ---> to be used in below apis
+				</div>
+			</md-content>
+			
+			<md-content class="md-theme-fn10 md-fn10-theme">
+				<div style="padding: 20px;">
+					<span style="color: white">addserver</span> <br/><br/> curl -H "Accept: application/json" -H "Content-type: application/json" -H "Authorization: Bearer {THE_USERS_JWT_API_TOKEN}" -X POST -d '{"ip": "my_ip", "config_name": "my_serial_id", "model": "my_model", "system_serial": "MY_SERIAL_NUMBER", "name": "MY_SERVER_NAME" }' http://TRUE_VIEW_SERVER_URL/api/tv/server/add?api_token=USER_API_TOKEN
+					
+				</div>
+            </md-content>
+          	<md-content class="md-theme-fn10 md-fn10-theme">
+				<div style="padding: 20px;">
+					<span style="color: white">trueviewalert</span> <br/><br/> curl -H "Accept: application/json" -H "Content-type: application/json" -H "Authorization: Bearer {THE_USERS_JWT_API_TOKEN}" -X POST -d '{"time": "2016-01-31 10:59:59", "severity": "Error", "serial": "fock", "content": "Focker Lives", "id": "0" }' http://TRUE_VIEW_SERVER_URL/api/tv/message/add?api_token=USER_API_TOKEN
+					
+				</div>
+            </md-content>
+            
+            <md-content class="md-theme-fn10 md-fn10-theme">
+				<div style="padding: 20px;">
+					<span style="color: white">trueviewalert (2nd option)</span> <br/><br/>curl -POST -v --form "serial=fock" --form "org_id=12345" --form "time=2016-01-31 10:59:59" --form "severity=MYDUDE" --form "serial=fock" --form "content=Yo mac focker this is adrian" --form "id=0" http://localhost:8000/api/sendalert?api_token=USER_API_TOKEN
+					
+				</div>
+            </md-content>
+            
+        </md-card>
+       
+        
+    </div>
+</div>

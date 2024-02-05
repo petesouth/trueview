@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="/monitcommando/plugin_gauge/d3.v3.min.js" language="JavaScript"></script>
+        <script src="/monitcommando/js/lib/angular/1.5.0/angular.js"></script>
+        <script src="/monitcommando/js/lib/angular/1.5.0/angular-route.js"></script>
+        <script src="/monitcommando/js/lib/jquery/2.2.0/jquery-2.2.0.js"></script>
+        <script src="/monitcommando/js/app/util/util.js"></script>
+        <!-- App JS -->
+        <script src="/monitcommando/plugin_gauge/app.js"></script>
+        <script src="/monitcommando/plugin_gauge/services/influxDBService.js"></script>
+        <!-- liquidGauge -->
+        <script src="/monitcommando/plugin_gauge/components/liquidGauge/liquidGauge.js"></script>
+        <script src="/monitcommando/plugin_gauge/components/liquidGauge/liquidGaugeCtrl.js"></script>
+        <!-- App css -->
+        <link rel="stylesheet" href="/monitcommando/plugin_gauge/assets/css/gauge.css" type="text/css" />
+    </head>
+    <body ng-app="gauge">
+        <div ng-view class="view-animate"></div>
+        <!-- views -->
+    </body>
+</html>

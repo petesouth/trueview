@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
+<head>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.sparkline.js"></script>
+    <script type="text/javascript" src="jquery.peity.js "></script>
+
+    <script type="text/javascript">
+$(function() {
+
+    $('.mysparkline').sparkline([4,3,3,1,4,3,2,2,1], {
+        type: 'bar',
+        barColor: '#009900', 
+        //width: '50px',
+        tooltipFormat: '<span style="color: {{color}}">CPU</span>: {{value}}',
+        composite: false
+    });
+    $('.mysparkline').sparkline([1,2,3,4,3,2,4,1,3], {
+        type: 'bar',
+        barColor: '#33ff33',  
+        composite: true
+    });
+
+    /** This code runs when everything has been loaded on the page */
+    /* Inline sparklines take their values from the contents of the tag */
+    $('.inlinesparkline').sparkline([4,3,3,1,4,3,2,2,1], {
+        type: 'line',
+        lineColor: '#009900',
+        //fillColor: '',
+        //tooltipFormat: '<span style="color: {{color}}">CPU</span>: {{value}}',
+        composite: false
+    }); 
+
+    $('.inlinesparkline').sparkline([1,2,3,4,3,2,4,1,3], {
+        type: 'line',
+        lineColor: 'red', 
+        //fillColor: '',
+        //tooltipFormat: '<span style="color: {{color}}">CPU</span>: {{value}}',
+        composite: true
+    }); 
+    /* Sparklines can also take their values from the first argument 
+       passed to the sparkline() function */
+    var myvalues = [10,8,5,7,4,4,1];
+    $('.dynamicsparkline').sparkline(myvalues);
+
+    /* The second argument gives options such as chart type */
+    $('.dynamicbar').sparkline(myvalues, {type: 'bar', barColor: 'green'} );
+
+    /* Use 'html' instead of an array of values to pass options 
+       to a sparkline with data in the tag */
+    $('.inlinebar').sparkline('html', {type: 'bar', barColor: 'red'} );
+
+    $("#capacity").sparkline([5,6,7,2,0,-4,-2,4], {
+        type: 'bar'});
+
+
+
+    $(".data-attributes span").peity("donut")
+
+
+
+
+
+        /**/
+        var mrefreshinterval = 500; // update display every 500ms
+    var lastmousex=-1; 
+    var lastmousey=-1;
+    var lastmousetime;
+    var mousetravel = 0;
+    var mpoints = [];
+    var mpoints_max = 30;
+    $('body').mousemove(function(e) {
+        var mousex = e.pageX;
+        var mousey = e.pageY;
+        if (lastmousex > -1)
+            mousetravel += Math.max( Math.abs(mousex-lastmousex), Math.abs(mousey-lastmousey) );
+        lastmousex = mousex;
+        lastmousey = mousey;
+    });
+    mdraw = function() {
+        var md = new Date();
+        var timenow = md.getTime();
+        if (lastmousetime && lastmousetime!=timenow) {
+            var pps = Math.round(mousetravel / (timenow - lastmousetime) * 1000);
+            mpoints.push(pps);
+            if (mpoints.length > mpoints_max)
+                mpoints.splice(0,1);
+            mousetravel = 0;
+            $('#mousespeed').sparkline(mpoints, { width: mpoints.length*2 });
+        }
+        lastmousetime = timenow;
+        mtimer = setTimeout(mdraw, mrefreshinterval);
+    }
+    var mtimer = setTimeout(mdraw, mrefreshinterval); // We could use setInterval instead, but I prefer to do it this way
+    $.sparkline_display_visible(); 
+
+});
+    </script>
+</head>
+<body>
+    <h2>Sparkline charts</h2>
+    <p>
+    Mouse speed <span id="mousespeed">Loading..</span> 
+    </p>
+    <p>
+    Inline Sparkline: <span class="mysparkline">Loading</span>.
+    </p>
+    <p>
+    Inline Sparkline: <span class="inlinesparkline">Loading</span>.
+    </p>
+    <p>
+    Sparkline with dynamic data: <span class="dynamicsparkline">Loading..</span>
+    </p>
+    <p>
+    Bar chart with dynamic data: <span class="dynamicbar">Loading..</span>
+    </p>
+    <p>
+    Bar chart with inline data: <span class="inlinebar">1,3,4,5,3,5</span>
+    </p>
+    <p>
+    capacity <sapn id="capacity"> Loading ...</span>
+    </p>
+
+    <h2>Piety charts</h2>
+    <p class="data-attributes">
+    <span data-peity='{ "fill": ["red", "#eeeeee"],    "innerRadius": 10, "radius": 40 }'>1/7</span>
+    <span data-peity='{ "fill": ["orange", "#eeeeee"], "innerRadius": 14, "radius": 36 }'>2/7</span>
+    <span data-peity='{ "fill": ["yellow", "#eeeeee"], "innerRadius": 16, "radius": 32 }'>3/7</span>
+    <span data-peity='{ "fill": ["green", "#eeeeee"],  "innerRadius": 18, "radius": 28 }'>4/7</span>
+    <span data-peity='{ "fill": ["blue", "#eeeeee"],   "innerRadius": 20, "radius": 24 }'>5/7</span>
+    <span data-peity='{ "fill": ["indigo", "#eeeeee"], "innerRadius": 18, "radius": 20 }'>6/7</span>
+    <span data-peity='{ "fill": ["violet", "#eeeeee"], "innerRadius": 15, "radius": 16 }'>7/7</span>
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    <md-tabs flex md-selected="activeTab" md-dynamic-height>
+        <md-content class="md-padding">
+            <md-tab label="Users">
+                <md-card class="md-fn10-theme">
+                    <md-toolbar class="md-theme-fn10 md-fn10-theme">
+                        <h2 class="md-toolbar-tools">
+                            <div style="width: 100%;" layout="row">
+                                <div flex="5">id</div>
+                                <div  flex="25">Name</div>
+                                <div flex="30">Email</div>
+                                <div  flex="30">Role</div>
+                                <div flex="20" layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button" aria-label="Add" ng-click="addUser()">
+                                        <md-icon md-font-icon="fa fa-plus-square"></md-icon>
+                                    </md-button>
+                                </div>
+                            </div>
+                        </h2>
+                    </md-toolbar>
+                    <md-content class="md-theme-fn10 md-fn10-theme">
+                        <md-divider></md-divider>
+
+                        <md-list-item ng-repeat="user in users">
+                            <div style="width: 100%;" class="table-list" layout="row">
+                                <div flex="5">{{user.id}}</div>
+                                <div  flex="25">{{ user.name }}</div>
+                                <div flex="30">{{ user.email }}</div>
+                                <div  flex="30">{{ user.role }}</div>
+                                <div flex="20" layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button md-fn10-theme" aria-label="edit" ng-click="goUser(user.id)">
+                                        <md-icon class="md-fn10-theme" md-font-icon="icon-mode-edit"></md-icon>
+                                        <md-tooltip>Edit</md-tooltip>
+                                    </md-button>
+                                    <md-button class="md-icon-button md-fn10-theme" aria-label="delete" ng-click="deleteUser(user.id)">
+                                        <md-icon class="md-fn10-theme" md-font-icon="icon-delete"></md-icon>
+                                        <md-tooltip>Delete</md-tooltip>                                           
+                                    </md-button>                                                                                                
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                    </md-content>
+                </md-card>
+            </md-tab>
+
+            <md-tab label="Organizations">
+                <md-card class="md-fn10-theme">
+                    <md-toolbar class="md-theme-fn10 md-fn10-theme">
+                        <h2 class="md-toolbar-tools">
+                            <div style="width: 100%;" layout="row">
+                                <div flex="15">Org Id</div>
+                                <div flex="30">Name</div>
+                                <div flex="35">Influx Server</div>
+                                <div flex="20" layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button" aria-label="Add" ng-click="addOrg()">
+                                        <md-icon md-font-icon="fa fa-plus-square"></md-icon>
+                                    </md-button>
+                                </div>
+                            </div>
+                        </h2>
+                    </md-toolbar>
+                    <md-content class="md-theme-fn10 md-fn10-theme">
+                        <md-divider></md-divider>
+
+                        <md-list-item ng-repeat="org in filteredOrgs">
+                            <div style="width: 100%;" class="table-list" layout="row">
+                                <div flex="15">{{org.org_id}}</div>
+                                <div flex="30">{{org.name}}</div>
+                                <div flex="35">{{org.influx}}</div>
+                                <div flex="20" layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button md-fn10-theme" aria-label="edit" ng-click="goOrg(org.id)">
+                                        <md-icon class="md-fn10-theme" md-font-icon="icon-mode-edit"></md-icon>
+                                        <md-tooltip>Edit</md-tooltip>
+                                    </md-button>
+                                    <md-button class="md-icon-button md-fn10-theme" aria-label="delete" ng-click="deleteOrg(org.id)">
+                                        <md-icon class="md-fn10-theme" md-font-icon="icon-delete"></md-icon>
+                                        <md-tooltip>Delete</md-tooltip>                               
+                                    </md-button>                                                                                    
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                        <div layout="row" layout-align="center center" class="dash-table" ng-show="orgs.length/numPerPageOrg > 1">
+                            <ul uib-pagination total-items="totalOrgs" ng-model="currentPageOrg" max-size="5" items-per-page="numPerPageOrg" class="pagination-sm" boundary-link-numbers="true"></ul>
+                        </div>
+                    </md-content>
+                </md-card>
+            </md-tab>
+
+            <md-tab label="Servers">
+                <md-card class="md-fn10-theme">
+                    <md-toolbar class="md-theme-fn10 md-fn10-theme">        
+                        <h2 class="md-toolbar-tools">
+                            <div style="width: 100%;" layout="row">
+                                <div flex="15">Serial#</div>
+                                <div flex="15">IP</div>
+                                <div flex="20">Host</div>
+                                <div flex="25">Customer</div>
+                                <div flex="10">Registered</div>
+                                <div flex="15" layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button" aria-label="Add">
+                                        <md-icon md-font-icon="fa fa-plus-square"></md-icon>
+                                    </md-button>
+                                </div>
+                            </div>
+                        </h2>
+                    </md-toolbar>
+                    <md-content class="md-theme-fn10 md-fn10-theme">
+                        <md-divider></md-divider>
+
+                        <md-list-item ng-repeat="server in filteredServers ">
+                            <div style="width: 100%;" class="table-list" layout="row">
+                                <div flex="15">{{server.system_serial}}</div>
+                                <div flex="15">{{server.ip}}</div>
+                                <div flex="20">{{server.hostname}}</div>
+                                <div flex="25">{{server.company}}</div>
+                                <div flex="10" layout="row" layout-align="center center">
+                                    <md-icon md-font-icon="fa fa-check" ng-show="{{server.registered}}"></md-icon>
+                                </div>
+                                <div flex="" layout="row" layout-align="end center">
+                                    <md-button class="md-icon-button md-fn10-theme" aria-label="edit" ng-click="goServer(server.id)">
+                                        <md-icon class="md-fn10-theme" md-font-icon="icon-mode-edit"></md-icon>
+                                        <md-tooltip>Edit</md-tooltip>
+                                    </md-button>
+                                    <md-button class="md-icon-button md-fn10-theme" aria-label="delete" ng-click="deleteServer(server.id)">
+                                        <md-icon class="md-fn10-theme" md-font-icon="icon-delete"></md-icon>
+                                        <md-tooltip>Delete</md-tooltip>
+                                    </md-button>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                        <div layout="row" layout-align="center center" class="dash-table" ng-show="servers.length/numPerPage > 1">
+                            <ul uib-pagination total-items="totalServers" ng-model="currentPage" max-size="5" items-per-page="numPerPage" class="pagination-sm" boundary-link-numbers="true"></ul>
+                        </div>
+                    </md-content>
+                </md-card>
+            </md-tab>
+        </md-content>
+    </md-tabs>
+</div>

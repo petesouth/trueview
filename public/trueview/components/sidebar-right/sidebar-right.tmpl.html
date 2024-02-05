@@ -1,0 +1,45 @@
+<md-toolbar class="md-theme-fn10 md-fn10-theme">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="close()">
+            <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            <md-tooltip>Close</md-tooltip>
+        </md-button>
+        <h2>
+            Send Email
+        </h2>
+    </div>
+</md-toolbar>
+<md-content flex class="md-padding">
+    <form ng-submit="" method="" name="notificationForm" class="md-padding">
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>To</label>
+                <input ng-model="notification.to" type="email">
+                <div ng-message="to_err" style="color:red">{{to_err}}</div>
+            </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>From</label>
+                <input ng-model="notification.from" type="email">
+                <div ng-message="from_err" style="color:red">{{from_err}}</div>
+            </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Subject</label>
+                <input ng-model="notification.subject">
+                <div ng-message="subject_err" style="color:red">{{subject_err}}</div>
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Content</label>
+                <textarea ng-model="notification.content" md-maxlength="150" rows="10" md-select-on-focus></textarea>
+            </md-input-container>
+        </div>
+        <md-button class="md-raised md-primary" ng-click="send_email(notification)">Send Email</md-button>
+    </form>
+</md-content>

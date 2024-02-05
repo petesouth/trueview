@@ -1,0 +1,154 @@
+//task list
+.ulist ul li {
+    list-style-type: disc;
+}
+
+// task card 
+.border-left-running {
+    border-left-style: outset;
+    border-left-width: 2px;
+    border-left-color: #4CAF50;
+}
+
+.border-left-completed {
+    border-left-style: outset;
+    border-left-width: 2px;
+    border-left-color: #2196F3;
+}
+
+.border-left-failed {
+    border-left-style: outset;
+    border-left-width: 2px;
+    border-left-color: #F44336;
+}
+
+.label-running {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: #fff;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+.label-completed {
+    background-color: #2196F3;
+    border-color: #2196F3;
+    color: #fff;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+.label-failed {
+    background-color: #F44336;
+    border-color: #F44336;
+    color: #fff;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+.server-fieldset {
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
+}
+.server-img {
+
+}
+.page-title {
+    padding: 0 0px 15px 10px;
+}
+
+/**
+ *  md-dialog for dashboard.systems
+ */
+.system-dialog {
+    position: fixed;
+    bottom: 84px;
+    right: 32px;
+    width: 700px;
+    height: calc(100vh - 110px - 64px - 24px);
+}
+
+#admin-panel-content-view .md-dialog-container {
+    height: 100% !important;
+}
+
+#admin-panel-content-view .md-dialog-backdrop {
+    background-color: transparent !important;
+}
+
+.toolbar-switcher {
+    font-size: 14px;
+    padding: 0 16px;
+}
+
+/**
+ *  Search Box in right sidebar
+ *
+ */
+.search-box {
+    border: 1px solid;
+    border-color: lavender;
+    border-radius: 3px;
+}
+
+.search-box-icon {
+    padding: 3px;
+}
+
+div#sidenav-search-box .md-errors-spacer {
+    min-height: 0px !important;
+}
+
+div#sidenav-search-box .md-input {
+    border-color: white;
+}
+
+/**
+ *  header of md-list
+ */
+.list-header {
+    background-color: lightgrey;
+}
+
+.chart-title {
+    padding: 10px;
+}
+
+/**
+ * remove blue border when md-toolbar has ng-click event
+ */
+md-toolbar:focus {
+    outline: none;
+}
+md-toolbar:hover {
+    /*cursor: pointer;*/
+}
+
+/**
+ * expand card, set iframe height
+ */
+.ifrm-expand {
+    height:600px;
+}
+
+/**
+ * graph card content background color
+ */
+.graph-card-content {
+    background-color: #15171B !important; 
+}
+/**
+ * gauge iframe
+ */
+.gauge-iframe {
+    margin-top: 10px;
+}
+
+/**
+ * sparkline span
+ */
+.sparkline {
+    position: relative;
+}

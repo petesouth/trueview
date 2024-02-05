@@ -1,0 +1,134 @@
+{
+	"rows": [
+	
+		[
+			{
+				"title": "Capacity By Pool",
+				"flex_width": "100",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22poolsize:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_pool_size.json&shl=true&shd=true&rmb=1&rdb=200000000&schemeName=scheme08&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Gig(s)"
+			}
+		],
+		[
+			{
+				"title": "hash_collisions",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22hash_collisions:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_1.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme17&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=hash_collisions"
+			},
+			{
+				"title": "cache_eviction",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22cache_eviction:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_2.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme14&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_eviction"
+			}
+		],
+		[
+			{
+				"title": "cache_operation",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22cache_operation:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_3.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme02&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_operation"
+			},
+			{
+				"title": "cache_ratio",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22cache_ratio:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_4.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme17&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_ratio"
+			}
+		],
+		[
+			{
+				"title": "cache_result",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22cache_result:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_5.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_result"
+			},
+			{
+				"title": "cache_size",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22cache_size:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_6.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme16&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_size"
+			}
+		],
+		[
+			{
+				"title": "mutex_operations",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22mutex_operations:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_7.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme14&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=mutex_operations"
+			},{
+				"title": "cache_eviction",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22cached:0%22,%22eligible:1%22,%22ineligible:2%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_8.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme16&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_eviction"
+			}
+		],
+		[
+			{
+				"title": "cache_operation",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22allocated:0%22,%22deleted:1%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_9.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme14&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_operation"
+			},
+			{
+				"title": "cache_ratio",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22arc:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_10.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme16&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_ratio"
+			}
+		],
+		[
+			{
+				"title": "cache_result",
+				"flex_width": "100",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22demand_data-hit:0%22,%22demand_data-miss:1%22,%22demand_metadata-hit:2%22,%22demand_metadata-miss:3%22,%22prefetch_data-hit:4%22,%22prefetch_data-miss:5%22,%22prefetch_metadata-hit:6%22,%22prefetch_metadata-miss:7%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_11.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme02&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_result"
+			}
+		],
+		[
+			{
+				"title": "cache_size",
+				"flex_width": "100",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22L2:0%22,%22arc:1%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_12.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme16&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=cache_size"
+			}
+		],
+		[
+			{
+				"title": "mutex_operations",
+				"flex_width": "100",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22miss:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_13.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme05&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=mutex_operations"
+			}
+		],
+		[
+			{
+				"title": "rx io_octets",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22io_octets:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_14.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme11&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=io_octets"
+			},
+			{
+				"title": "rx io_octets",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22L2:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_15.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme14&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=io_octets"
+			}
+		],
+		[
+			{
+				"title": "tx io_octets",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22io_octets:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_16.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme20&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=io_octets"
+			},
+			{
+				"title": "tx io_octets",
+				"flex_width": "50",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22L2:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_chart_17.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme14&startDate=&&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=io_octets"
+			}
+		]
+	]
+}

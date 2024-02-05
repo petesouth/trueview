@@ -1,0 +1,59 @@
+<div class="dashboard-container padded-content-page" layout="column" style="min-width: 500px;" ng-cloak>
+
+	<style>
+
+		input[type=number]::-webkit-outer-spin-button,
+		input[type=number]::-webkit-inner-spin-button {
+		    -webkit-appearance: none;
+		    margin: 0;
+		}
+		
+		input[type=number] {
+		    -moz-appearance:textfield;
+		}
+
+</style>
+
+    <div>
+        <h2>Logs Summary (Elastic)</h2>
+    </div>
+    
+   	<md-card class="md-fn10-theme dash-card">
+       <md-content>
+          <select id="elasticindexname" class="md-no-underline" style="background: black; width: 100%; overflow: hidden;" ng-change='selectedIndexChange()'  ng-model="elasticIndexName">
+                    <option ng-repeat="foundIndexName in existingIndices" title="{{foundIndexName}}">{{foundIndexName}}</option>
+          </select>
+       </md-content>
+   </md-card>
+                            
+			
+    <md-card class="md-fn10-theme dash-card">
+        <md-card-content class="total">
+     		 <div layout="row" layout-xs="column" layout-wrap>
+ 
+			 	<div flex="100" flex-xs="100" flex-sm="50">
+			        <md-card class="md-fn10-theme dash-sub-card">
+			            <md-card-header>
+			                <md-card-header-text class="md-fn10-theme">
+			                    <span class="md-subtitle">Logs - {{elasticIndexName}}</span>
+			                </md-card-header-text>
+			            </md-card-header>
+						
+						<md-card-content style="padding: 0px;">
+			                <iframe src="{{elasticLogPanelUrl}}" height="1515" width="100%" frameBorder="0"></iframe>
+			            </md-card-content>
+			
+			            <md-card-title>
+			                <md-card-title-text>
+			                    <span class="md-subhead"></span>
+			                </md-card-title-text>
+			            </md-card-title>
+			        </md-card>
+			    </div>
+			   
+			</div>
+			     		
+     	</md-card-content>
+     </md-card>
+
+</div>

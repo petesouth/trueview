@@ -1,0 +1,68 @@
+{
+	"rows": [
+		[
+			{ 
+				"title" : "PETE Storage Used Percent of 34.11 GB",
+				"flex_width": "25",
+				"chart_height" : "350",
+				"url" : "/monitcommando/index.html#/fullpiechartcontrol?host=&dr=true&dr=true&mvps=50&ps=1&fq=4000&mc=%5B%22bytes-used:0%22%5D&sju=%2Fjson_repo%2F{{hostname}}overview2_storage_gauge.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=stackedsplinearea&bigN=0&bigS=0&x_title=&total=34 GB"
+			},
+			{
+				"title": "Storage Used Complex",
+				"flex_width": "75",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22df_complex-free:0%22,%22df_complex-reserved:1%22,%22df_complex-used:2%22%5D&sju=/json_repo/{{hostname}}overview_stoarge_chart.json&shl=true&shd=true&rmb=1&rdb=200000000&schemeName=scheme06&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Gig(s)"
+			}
+			
+		],
+		[
+			{
+				"title": "Disk IOPS",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22w_disk_ops:4%22,%22r_disk_ops:1%22%5D&sju=/json_repo/{{hostname}}overview_disk_read_write_chart.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme04&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Block R/W IOPs"
+			},
+			{
+				"title": "Capacity By Pool",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22poolsize:0%22%5D&sju=/json_repo/{{hostname}}overview_zfs_pool_size.json&shl=true&shd=true&rmb=1&rdb=200000000&schemeName=scheme08&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Gig(s)"
+			},
+			{
+				"title": "Swap Percent",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/fullpiechartcontrol?host=&dr=true&dr=true&mvps=1&ps=1&fq=4000&mc=%5B%22cache:2%22%5D&sju=%2Fjson_repo%2Foverview_swap_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title="
+			},
+			{
+				"title": "Swap Complex",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22swap_value:0%22%5D&sju=/json_repo/{{hostname}}overview_swap_chart.json&shd=true&shl=true&rmb=1&rdb=200000000&schemeName=scheme03&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Gig(s)"
+			}
+			
+		],
+		[
+			{
+				"title": "Cache Performance",
+				"flex_width": "30",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22w_disk_ops:4%22,%22r_disk_ops:1%22%5D&sju=/json_repo/{{hostname}}overview_disk_read_write_chart.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme02&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Number Of"
+			},
+			{
+				"title": "Disk R/W Speed",
+				"flex_width": "30",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22w_disk_ops:0%22,%22r_disk_ops:3%22%5D&sju=/json_repo/{{hostname}}overview_disk_read_write_chart.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme06&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Number Of"
+			},
+			{
+				"title": "Disk Octets",
+				"flex_width": "40",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22w_disk_ops:2%22,%22r_disk_ops:5%22%5D&sju=/json_repo/{{hostname}}overview_disk_read_write_chart.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme03&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Number Of"
+			}
+		]
+	]
+}
+
+

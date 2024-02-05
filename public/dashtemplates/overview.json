@@ -1,0 +1,76 @@
+{
+	"rows": [
+		[	
+			{ 
+				"title" : "Storage Used Percent of 34.11 GB",
+				"flex_width": "25",
+				"chart_height" : "350",
+				"url" : "/monitcommando/index.html#/fullpiechartcontrol?host=&dr=true&dr=true&mvps=50&ps=1&fq=4000&mc=%5B%22bytes-used:0%22%5D&sju=%2Fjson_repo%2F{{hostname}}overview2_storage_gauge.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=stackedsplinearea&bigN=0&bigS=0&x_title=&total=34 GB"
+			},
+			{
+				"title": "Storage Used Complex",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22df_complex-free:0%22,%22df_complex-reserved:1%22,%22df_complex-used:2%22%5D&sju=/json_repo/{{hostname}}overview_stoarge_chart.json&shl=true&shd=true&rmb=1&rdb=200000000&schemeName=scheme06&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Gig(s)"
+			},
+			{
+				"title" : "Connections",
+				"flex_width": "25",
+				"chart_height" : "350",
+				"url" : "/monitcommando/index.html#/textpanel?host=trueview-demo_freehive_io&dr=true&dr=true&mvps=1&ps=1&fq=4000&mc=%5B%22ESTABLISHED:2%22%5D&sju=/json_repo/{{hostname}}overview_tcp_chart.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title="
+			},
+			{
+				"title": "Band Width",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=10&ps=1&fq=4000&mc=%5B%22shortterm:0%22,%22midterm:1%22,%22longterm:2%22%5D&sju=/json_repo/{{hostname}}overview_load_chart.json&shl=true&shd=true&rmb=100&rdb=1&schemeName=scheme08&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Percent"
+			}
+		
+		],
+		
+		[	{	"title": "Logs Recieved",
+				"flex_width": "30",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&dr=true&mvps=10&ps=1&fq=4000&mc=%5B%22bytes-used:0%22%5D&sju=/json_repo/{{hostname}}overview_file_log.json&shd=true&shl=true&rmb=1&rdb=1048576&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=column&bigN=0&bigS=0&x_title=MB%20Per%20File" 
+			},
+			{
+				"title": "Swap Complex",
+				"flex_width": "25",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22swap_value:0%22%5D&sju=/json_repo/{{hostname}}overview_swap_chart.json&shd=true&shl=true&rmb=1&rdb=200000000&schemeName=scheme03&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Gig(s)"
+			},
+			{
+				"title": "Newtork Traffic TX/RX",
+				"flex_width": "40",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22TX if_errors:0%22,%22TX if_octets:1%22,%22TX if_packets:2%22,%22RX if_errors:3%22,%22RX if_octets:4%22,%22RF if_packets:5%22%5D&sju=/json_repo/{{hostname}}overview_tx_rx_chart.json&shd=true&shl=true&rmb=1&rdb=1000000&schemeName=scheme11&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Per Million"
+			}
+		
+		],
+		
+		[
+			{
+				"title": "CPU Usage",
+				"flex_width": "30",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=10&ps=1&fq=4000&mc=%5B%22usage_system:0%22,%22usage_user:1%22%5D&sju=/json_repo/{{hostname}}overview2_cpu.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme01&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Cpu Percent&maxY=100"
+			},
+			
+			{
+				"title": "Memory Usage",
+				"flex_width": "30",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=10&ps=1&fq=4000&mc=%5B%22used_percent:0%22%5D&sju=/json_repo/{{hostname}}overview2_memory.json&shd=true&shl=true&rmb=1&rdb=1&schemeName=scheme09&startDate=&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Free Memory Percent"
+			},
+			{
+				"title": "Protocol IOPS",
+				"flex_width": "40",
+				"chart_height": "350",
+				"url": "/monitcommando/index.html#/chartcontrol?host=&dr=true&mvps=20&ps=1&fq=4000&mc=%5B%22w_disk_ops:4%22,%22r_disk_ops:1%22%5D&sju=/json_repo/{{hostname}}overview_disk_read_write_chart.json&shl=true&shd=true&rmb=1&rdb=1&schemeName=scheme02&startDate=&gb=1s&fa=&chartType=splinearea&bigN=0&bigS=0&x_title=Block R/W IOPs"
+			}
+		]
+		
+	]
+}
+
+

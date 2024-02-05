@@ -1,0 +1,108 @@
+// Breadcrumbs
+.breadcrumb {
+  display: inline-block;
+}
+
+// Toolbar Search
+.toolbar-search {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: 0.8em;
+  transition: max-width .5s, opacity 0.3s .3s;
+  display: block !important;
+  max-width: 200px;
+  opacity: 1;
+  text-indent: 1em;
+  &::placeholder {
+    color: inherit;
+  }
+  &.ng-show {
+ //  @include fadeIn();  // error --lola
+  }
+  &.ng-hide {
+    transition: max-width .3s .3s, opacity 0.5s;
+    max-width: 0px;
+    opacity: 0;
+  }
+}
+
+// Toolbar Avatar
+.toolbar-user-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+// Button
+.toolbar-button {
+  md-icon {
+    position: relative;
+  }
+}
+
+// Badges
+$tri-badge-size: 2.2rem;
+.toolbar-button-badge {
+  display: block;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  right: 0.2rem;
+  top: 0.8rem;
+  line-height: 2rem;
+  border-radius: 50%;
+}
+
+.toolbar-button-badge-new {
+//  @include wobble();  // error --lola
+}
+
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+    color: #ddd;
+    cursor: not-allowed;
+    background-color: #15171B;
+    border-color: #ddd;
+}
+
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+    z-index: 2;
+    color: #ddd;
+    background-color: #15171B;
+    border-color: #ddd;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #ddd;
+}
+
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #ddd;
+    text-decoration: none;
+    background-color: #15171B;
+    border: 1px solid #ddd;
+}
+
+
+.md-select-menu-container.md-active md-select-menu > * {
+    opacity: 1;
+    -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -webkit-transition-delay: 100ms;
+    transition-delay: 100ms;
+    background-color: #15171B;
+    color: #337ab7;
+}
+

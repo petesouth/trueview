@@ -1,0 +1,26 @@
+<md-dialog class="server-dialog">
+    <md-toolbar class="md-theme-fn10 md-fn10-theme">
+        <div class="md-toolbar-tools">
+            <h2>Register Server</h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <md-content class="md-theme-fn10 md-fn10-theme md-padding">
+        <form name="userForm" ng-submit>
+            <md-input-container layout="row" flex>
+                <label>Serial Number</label>
+                <input ng-model="newserver.system_serial">
+            </md-input-container>
+            <md-input-container layout="row" flex>
+                <label>Server Name</label>
+                <input ng-model="newserver.name">
+            </md-input-container>
+            <div class="md-actions" layout="row">
+                <span flex></span>
+                <md-button ng-click="cancel()"> Cancel </md-button>
+                <md-button class="md-primary" ng-click="addServer(newserver)"> Register </md-button>
+            </div>
+        </form>
+    </md-content>
+</md-dialog>
+

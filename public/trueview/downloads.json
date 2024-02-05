@@ -1,0 +1,36 @@
+{
+	"downloads" : [
+		{ "name" : "FreeNas-9.10.2",
+		  "paths" : [ {
+		  				"name": "FreeNAS-9.10.2-U3.debug.txz",
+		  				"path" : "FreeNAS-9.10.2-U3.debug.txz"
+		  		},{
+		  				"name": "FreeNAS-9.10.2-U3.debug.txz.sha256",
+		  				"path" : "FreeNAS-9.10.2-U3.debug.txz.sha256"
+		  		},{
+		  				"name": "FreeNAS-9.10.2-U3.iso",
+		  				"path" : "FreeNAS-9.10.2-U3.iso"
+		  		},{
+		  				"name": "FreeNAS-9.10.2-U3.iso.sha256",
+		  				"path" : "FreeNAS-9.10.2-U3.iso.sha256"
+		  		}]
+		}
+	],
+	"documents" : [
+		{ "name" : "FreeNasDocs",
+		  "paths" : [ {
+		  				"name": "FreeNASMiniSSDInstallationGuide.docx",
+		  				"path" : "FreeNASMiniSSDInstallationGuide.docx"
+		  		},{
+		  				"name": "FreeNASMiniSSDInstallationGuide.pdf",
+		  				"path" : "FreeNASMiniSSDInstallationGuide.pdf"
+		  		},{
+		  				"name": "FreeNASMiniXLSSDInstallGuide.docx",
+		  				"path" : "FreeNASMiniXLSSDInstallGuide.docx"
+		  		},{
+		  				"name": "FreeNASMiniXLSSDInstallGuide.pdf",
+		  				"path" : "FreeNASMiniXLSSDInstallGuide.pdf"
+		  		}]
+		}
+	]
+}

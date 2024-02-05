@@ -1,0 +1,120 @@
+<div class="dashboard-container padded-content-page" layout="column">
+<!--  Nice Try Feature creeper 
+    <md-card class="md-fn10-theme">
+        <md-toolbar class="md-theme-fn10 md-fn10-theme">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Alert Rules</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-icon="fa fa-plus-square" ng-click="add()"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-divider></md-divider>
+        <div ng-repeat="rule in alert_rules">
+            <md-list-item class="rule-list" ng-click="expand(rule)">
+                <span ng-show="!rule.expand">{{rule.name}}</span>
+                <md-input-container ng-show="rule.expand">
+                    <input ng-model="rule.name" aria-label="name">
+                </md-input-container>
+                <div layout="row"  layout-align="center center" class="md-secondary">
+                    <md-button class="md-icon-button md-primary" aria-label="Save" ng-show="rule.expand" ng-click="save(rule)">
+                        <md-icon md-font-icon="fa fa-check"></md-icon>
+                        <md-tooltip>Save</md-tooltip>
+                    </md-button>
+                    <md-button class="md-icon-button md-accent"  aria-label="Delete" ng-show="rule.expand" ng-click="delete(rule)">
+                        <md-icon md-font-icon="fa fa-times"></md-icon>
+                        <md-tooltip>Delete</md-tooltip>
+                    </md-button>
+                    <md-switch class="md-primary" ng-model="rule.enabled" ng-true-value="1" ng-false-value="0" aria-label="switch"></md-switch>
+                    <md-icon class="menu-toggle-icon" md-font-icon="icon-keyboard-arrow-right" ng-class="{ open: rule.expand }"></md-icon>
+                </div>
+            </md-list-item>
+            <md-content ng-show="rule.expand" class="md-theme-fn10 md-fn10-theme">
+                <div layout="row" layout-align="space-around center" layout-xs="column">
+                    <div layout="column">
+                        <div layout="row">
+                            IF
+                            <md-select ng-model="rule.host" placeholder="Any Host" class="md-no-underline">
+                                <md-option ng-value="all">Any Host</md-option>
+                                <md-option ng-repeat="server in servers" ng-value="server.hostname">{{server.hostname}}</md-option>
+                            </md-select>
+                            <md-select ng-model="rule.service" placeholder="Any Service" class="md-no-underline">
+                                <md-option ng-value="all">Any Service</md-option>
+                                <md-option value="monit">monit</md-option>
+                                <md-option value="nginx">nginx</md-option>
+                                <md-option value="ntpd">ntpd</md-option>
+                            </md-select>
+                            <md-select ng-model="rule.state" placeholder="Any State" class="md-no-underline">
+                                <md-option ng-value="all">Any State</md-option>
+                                <md-option value="succeeded">Succeeded</md-option>
+                                <md-option value="failed">Failed</md-option>
+                                <md-option value="changed">Changed</md-option>
+                            </md-select>
+                            <md-select ng-model="rule.event" placeholder="Any Event" class="md-no-underline">
+                                <md-option ng-value="all">Any Event</md-option>
+                                <md-option value="action">Action</md-option>
+                                <md-option value="checksum">Checksum</md-option>
+                                <md-option value="connection">Connection</md-option>
+                                <md-option value="data">Data</md-option>
+                                <md-option value="execution">Execution</md-option>
+                                <md-option value="existence">Existence</md-option>
+                                <md-option value="filesystem">Filesystem flags</md-option>
+                            </md-select>
+                        </div>
+                    </div>
+                    <div layout="column">
+                        <div layout="row">
+                            <div>THEN</div>
+                            <md-select ng-model="rule.action" placeholder="Send mail to user" class="md-no-underline">
+                                <md-option value="mail">Send mail to user</md-option>
+                                <md-option value="slack">Send notification to slack</md-option>
+                            </md-select>
+                            <md-select ng-model="rule.receiver" placeholder="All Users" class="md-no-underline">
+                                <md-option ng-value="all">All Users</md-option>
+                                <md-option ng-repeat="user in users" ng-value="user.name">{{user.name}}</md-option>
+                            </md-select>
+                        </div>
+                    </div>
+                </div>
+            </md-content>
+            <md-divider></md-divider> 
+        </div>
+    </md-card>
+-->
+    <md-card class="md-fn10-theme">
+        <md-toolbar class="md-theme-fn10 md-fn10-theme">
+            <h2 class="md-toolbar-tools">
+                <div style="width: 100%;">
+                    <div layout="row" style="padding: 10px;">
+                        <div flex="5"></div>
+                        <div flex="10">Time</div>
+                        <div flex="60">Content</div>
+                        <div flex="15">Serial #</div>
+                        <div flex="10">Severity</div>
+                    </div>
+                </div>
+            </h2>
+        </md-toolbar>
+        <md-content class="md-theme-fn10 md-fn10-theme">
+            <md-divider></md-divider>
+
+            <md-list-item ng-repeat="notification in notifications | orderBy:'-created_at'" ng-click="read(notification)">
+                <div style="width: 100%;">
+                    <div layout="row" style="padding: 10px;">
+                        <div flex="5">
+                            <md-icon  md-font-icon="icon-lens" style="font-size: 15px; color: #2b9cd8 !important" ng-show="notification.is_read == 0"></md-icon>
+                        </div>
+                        <div flex="10">{{ notification.time }}</div>
+                        <div  flex="60">{{ notification.content }}</div>
+                        <div  flex="15">{{ notification.serial }}</div>
+                        <div flex="10">{{notification.severity}}</div>
+                    </div>
+                    <md-divider></md-divider>
+                </div>
+            </md-list-item>
+        </md-content>
+    </md-card>
+</div>

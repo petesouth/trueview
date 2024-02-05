@@ -1,0 +1,101 @@
+<div layout="row" layout-align="end center">
+	<style>
+.chart_toolbar_input {
+	font-size: xx-small;
+	background-color: black;
+	color: white;
+	height: 10px;
+	width: 80px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.chart_td {
+	padding-left: 5px;
+}
+
+.chart_td_title {
+	padding-left: 5px;
+	font-size: 8px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+</style>
+	<div class="row">
+		
+
+		<table ng-click='$ctrl.stopPropagation($event)' >
+			<tr>
+				<td class="chart_td">
+					<md-button id="{{$ctrl.namerootid}}_ifrm_search_button"
+						class="md-icon-button"
+						ng-click='$ctrl.repaintMeWithDate($event, $ctrl.namerootid, $ctrl.namerootid + "_ifrm_datetime", $ctrl.namerootid + "_ifrm_functionAverage", $ctrl.namerootid + "_ifrm_groupBy", $ctrl.namerootid + "_ifrm_groupByNumber", $ctrl.namerootid + "_ifrm_chartType", $ctrl.namerootid + "_ifrm_numberOfPredictedValues", $ctrl.namerootid + "_ifrm_seasonalPattern", $ctrl.namerootid + "_ifrm_batchSize")'>
+					<md-icon md-font-icon="icon-search"></md-icon> <md-tooltip>Search</md-tooltip>
+					</md-button>
+				</td>
+				<td class="chart_td"><select
+					id="{{$ctrl.namerootid}}_ifrm_functionAverage"
+					class="md-no-underline chart_toolbar_input"
+					title="Average/Aggregation Function Type" style="height: 15px;"
+					ng-model="$ctrl.funtionSelect"
+					ng-change="$ctrl.functionTypeChange()">
+						<option ng-repeat="functionAverage in $ctrl.functionAverages">{{functionAverage}}</option>
+				</select></td>
+				<td class="chart_td" ng-if="$ctrl.showHolts" ><input
+					id="{{$ctrl.namerootid}}_ifrm_numberOfPredictedValues"
+					title="Number of predictive Values" placeholder="Predictive Units"
+					class="md-no-underline chart_toolbar_input" type="number" min="1" value="" /></td>
+				<td class="chart_td"  ng-if="$ctrl.showHolts"><input
+					id="{{$ctrl.namerootid}}_ifrm_seasonalPattern"
+					title="Seasonal Pattern" placeholder="Seasonal Pattern"
+					class="chart_toolbar_input" type="number" min="1" value="" /></td>
+				<td class="chart_td">
+					<input id="{{$ctrl.namerootid}}_ifrm_batchSize" title="Batch Size"
+					placeholder="Batch Size" class="md-no-underline chart_toolbar_input" type="number"
+					min="50" value="50" />
+				</td>
+				<td class="chart_td"><input
+					id="{{$ctrl.namerootid}}_ifrm_datetime" placeholder="Start Date"
+					title="Start Date (if not selected default is 2 weeks back)"
+					class="md-no-underline chart_toolbar_input" type="datetime" /></td>
+				<td class="chart_td"><input
+					id="{{$ctrl.namerootid}}_ifrm_groupByNumber"
+					title="Number of Units to GroupBy (seconds, minutes, etc..)"
+					placeholder="Number Of" class="md-no-underline chart_toolbar_input" type="number"
+					min="1" value="1" /></td>
+				<td class="chart_td"><select
+					id="{{$ctrl.namerootid}}_ifrm_groupBy" class="md-no-underline chart_toolbar_input"
+					title="GroupBy These Units (Default is seconds)"
+					style="height: 15px;">
+						<option ng-repeat="groupBy in $ctrl.groupBys"
+							value="{{groupBy.name}}">{{groupBy.label}}</option>
+				</select></td>
+				<td class="chart_td"><select
+					id="{{$ctrl.namerootid}}_ifrm_chartType"
+					class="md-no-underline chart_toolbar_input"
+					title="Chart Type (Style of the chart lines)" style="height: 15px;">
+						<option ng-repeat="chartType in $ctrl.chartTypes">{{chartType}}</option>
+				</select></td>
+			</tr>
+			<!-- 
+			 -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '
+           <select  class="md-no-underline" style="background: black; width: 100%; overflow: hidden;" ng-change='selectedPluginChange()'  ng-model="selectedPluginName">
+               <option ng-repeat="plugin in pluginData.plugins" ng-value="plugin.pluginName"  >{{plugin.pluginName }}</option>
+           </select>
+-->
+		</table>
+		
+	</div>
+</div>

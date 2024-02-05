@@ -1,0 +1,83 @@
+md-card.dash-card > md-card-content.total{
+    background: #35373A;
+    border: 1px solid #28292B;
+    box-shadow: 0px 0px 20px #262727;
+}
+md-card.dash-sub-card {
+    box-shadow: 0 -5px 20px #151515;
+}
+md-card.dash-sub-card:focus {
+    box-shadow: 0 -5px 5px #151515;
+    outline: none;
+}
+md-card.dash-sub-card > md-card-header {
+    background-color: #2B3B45;
+}
+md-card.dash-sub-card > md-card-header > md-card-header-text > span {
+    margin: 0 auto;
+    font-size: 12px;
+    color: #f5f5f5;
+}
+md-card.dash-sub-card > md-card-title > md-card-title-text > span {
+    margin: 0 auto;
+    padding-top: 0px !important;
+    font-size: 12px;
+    color: #F5F5F5;
+}
+md-card.dash-sub-card > md-card-content {
+    background: -webkit-linear-gradient(left top,#3C3C3C, #444444);
+    border: 1px solid #424242;
+    -webkit-box-shadow: 0 0 2px #444444;
+}
+md-card.dash-sub-card > md-card-title {
+    background: #111111;
+}
+
+md-card.dash-table {
+    box-shadow: 0 0 20px #151515;
+}
+
+md-card.dash-table > md-card-header{
+    background: #2B3B45;
+}
+md-card.dash-table > md-card-content {
+    padding: 0px;
+    background-color: #232323;
+}
+md-card.dash-table > md-card-content > md-list {
+    padding-top: 0px;
+}
+md-list-item.dash-table-row-odd {
+    background-color: #2D2D2D;
+}
+
+md-list-item.dash-table-row-even {
+    background-color: #232323;
+}
+md-icon.dash-table {
+    color: #3D6D92 !important;
+}
+
+div.dash-table > ul > li > a {
+    border-radius: 50px;
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+    border: 0px;
+    padding-right: 50px;
+    padding-left: 50px;
+    background-color: #232323;
+}
+div.dash-table > ul > li.active > a {
+    background-color: #2B3B45;
+}
+div.dash-table > ul > li.disabled > a {
+    background-color: #232323;
+}
+div.dash-table > ul > li.disabled > a:hover {
+    background-color: #232323;
+}
+div.dash-table > ul > li > a:hover {
+    background-color: #2B3B45;
+}

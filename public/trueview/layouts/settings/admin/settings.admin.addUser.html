@@ -1,0 +1,57 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    <div>
+        <md-card class="md-fn10-theme">
+            <md-toolbar class="md-theme-fn10 md-fn10-theme">
+                <h2 class="md-toolbar-tools">
+                    <span>Add New User</span>
+                </h2>
+            </md-toolbar>
+
+            <md-content class="md-theme-fn10 md-fn10-theme">
+                <form ng-submit="" name="profileForm" class="md-padding">
+                    <div>
+                        <md-input-container class="md-icon-float md-block">
+                            <md-icon md-font-icon="fa fa-user-o" class="name"></md-icon>
+                            <input ng-model="newUser.name" type="text" placeholder="Name">
+                            <div ng-message="name_err" style="color:red">{{name_err}}</div>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <md-icon md-font-icon="fa fa-envelope-o" class="email"></md-icon>
+                            <input ng-model="newUser.email" type="email" placeholder="Email">
+                            <div ng-message="email_err" style="color:red">{{email_err}}</div>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <md-icon md-font-icon="fa fa-lock" class="password"></md-icon>
+                            <input ng-model="newUser.password" type="password" placeholder="Password">
+                            <div ng-message="password_err" style="color:red">{{password_err}}</div>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <md-icon md-font-icon="fa fa-building-o" class="company"></md-icon>
+                            <label>Compnay</label>
+                            <md-select ng-model="newUser.org_id">
+                                <md-option ng-repeat="org in orgs" ng-value="org.org_id">
+                                    {{org.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <md-icon md-font-icon="fa fa-users" class="group"></md-icon>
+                            <label>Role</label>
+                            <md-select ng-model="newUser.role_id">
+                                <md-option  ng-repeat="role in roles" ng-value="role.id">{{role.title}}</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="addUser(newUser)">Add</md-button>
+                    </div>
+                </form>
+            </md-content>
+
+        </md-card>
+    </div>
+</div>

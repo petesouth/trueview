@@ -1,0 +1,104 @@
+<?php
+/*
+|--------------------------------------------------------------------------
+| Routes File
+|--------------------------------------------------------------------------
+|
+| Here is where you will register all of the routes in an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+	Route::get('/test', function () {
+    		//return view('index');
+		echo "test page";
+    	});
+	
+	Route::get('/index', function () {
+    		return view('index');
+    	});
+    
+    Route::get('/', function () {
+    return view('index');
+    })->middleware('auth');
+
+    Route::get('/h', function () {
+        return view('home');
+    })->middleware('auth');
+    
+    /**
+     *  API for servers
+     */
+
+    //  get current logged user info
+    Route::get('/api/user', function () {
+        return Auth::user();
+    })->middleware('auth');
+    
+    //no need to get all servers
+    Route::get('/api/servers', 'tv\ServerController@all_servers')->middleware('auth');
+    
+    Route::get('/api/servers/{id}', 'tv\ServerController@server')->middleware('auth');
+    Route::get('/api/{orgid}/servers', 'tv\ServerController@user_servers')->middleware('cors');
+    Route::post('/api/server/add', 'tv\ServerController@add_server');
+    Route::post('/api/server/update', 'tv\ServerController@update_server');
+    Route::post('/api/server/delete', 'tv\ServerController@delete_server');
+
+
+    /**
+     * Org API
+     */
+    Route::get('/api/orgs','tv\OrgController@all_orgs');
+    Route::post('/api/orgs/delete', 'tv\OrgController@delete_org');
+    Route::get('/api/orgs/{id}','tv\OrgController@org');
+    Route::post('/api/org/update','tv\OrgController@update_org');
+    
+    /**
+     *	API for configration
+     */ 
+    Route::get('/api/config', 'tv\ConfigurationController@show_configInfo')->middleware('auth'); 
+    Route::post('/api/config/update_threshold', 'tv\ConfigurationController@update_configInfo_threshold');    
+    Route::post('/api/config/update_admin', 'tv\ConfigurationController@update_configInfo_admin');
+
+    /**
+     *	API to add user
+     */
+    //Route::post('/api/user/add', 'tv\ServerController@add_user')->middleware('auth.basic');
+    Route::post('/api/user/add', 'tv\ServerController@add_user');
+    Route::get('/api/users', 'tv\UserController@all_users')->middleware('auth');
+    Route::get('/api/user/{id}', 'tv\UserController@get_user_by_id')->middleware('auth');
+    Route::post('/api/user/update', 'tv\UserController@update_user')->middleware('auth');
+    Route::post('/api/user/delete', 'tv\UserController@delete_user')->middleware('auth');
+
+    /**
+     * Role API
+     */
+    Route::get('/api/roles', 'tv\RoleController@roles')->middleware('auth');
+
+    /**
+     * Message API
+     */
+    Route::get('/api/messages/{orgId}', 'tv\MessageController@all_message')->middleware('auth');
+    Route::get('/api/messages/{orgId}/updated/', 'tv\MessageController@is_update')->middleware('auth');
+    Route::get('/api/messages/{orgId}/new', 'tv\MessageController@new_message')->middleware('auth');
+    Route::post('/api/message/read', 'tv\MessageController@read_message')->middleware('auth');
+    //Route::post('/api/message/add', 'tv\MessageController@add_message');
+
+    Route::get('/home', 'HomeController@index');
+});
+
+Route::post('/api/message/add', 'tv\MessageController@add_message');

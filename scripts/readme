@@ -1,0 +1,49 @@
+Client Configuration
+
+
+CollectD  
+
+  In /usr/local/etc/collectd.conf
+
+     1) hostname = "my_server_name_whatever_format"
+     2)  LoadPlugin Network
+
+          <Plugin Network>
+                Server "trueview-demo.freehive.io" "25826"
+
+          </Plugin>
+
+           2a. the more plugins turned on.. The better.  If you can do percent and complex.. Turn them both on.
+
+
+Telegraf
+
+     1) sudo pkg install telegraf
+     2) telegraf config > /usr/local/etc/telegraf.conf
+ 
+In /usr/local/etc/telegraf.conf
+
+
+      search for host  and set hostname = "my_server_name_whatever_format"      (SAME NAME AS IN COLLECTD HOST NAME)
+
+       Go down to inputs section Turn everything on that you can.
+       Search for "outputs.influx"
+
+       Make sure it's not commented out... Make sure the influx server path is..  trueview-demo.freehive.io
+
+
+Now you can run it all
+
+
+service collectd start    (or restart)
+
+telegraf -config /usr/local/etc/telegraf.conf & 
+
+
+That's it.. You should now be able to manually under Settings / Servers... Add a server whose system serial is "my_server_name_whatever_format"  (same as in telegraf/collectd hostname)
+
+Once added.. Push the Register Link...
+
+
+Your server is now added to trueview.. With all the data.
+

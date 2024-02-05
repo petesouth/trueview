@@ -1,0 +1,30 @@
+#login-view {
+    padding: 32px 0;
+    height: 100%;
+    /*overflow: hidden;*/
+    /*background-color: #f5f5f5;*/
+    text-align: center;
+}
+
+#login-view .ix-logo {
+    margin: 25px auto 57px;
+}
+
+#login-view .input-container {
+    width: 288px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.md-button.login-btn {
+    width: 288px;
+     margin: 22px auto 6px;
+    /*width: 248px;*/
+    background-color: #0096D7 !important;
+    /*margin-left: -10px;*/
+}
+
+.err-message {
+    color: red;
+    font-size: small;
+}

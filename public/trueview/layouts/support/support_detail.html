@@ -1,0 +1,146 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    <div>
+        <h2>{{ticket.subject}}</h2>
+    </div>
+
+    <md-card class="md-fn10-theme support-table" ng-class="ticket.status">  
+        <md-card-header class="support-table"> 
+            <md-card-header-text> 
+                <div layout="row">
+                    <div flex="20">{{ticket.department}}</div>
+                    <div flex="20">{{ticket.owner}}</div>
+                    <div flex="20">{{ticket.status}}</div>
+                    <div flex="20">{{ticket.priority}}</div>
+                </div>
+            </md-card-header-text>
+        </md-card-header>
+    </md-card>
+    <md-card class="md-fn10-theme support-table">
+        <md-card-header class="support-table">
+            <md-card-header-text>
+                Contact Infomation
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-content style="overflow: hidden;">
+            <div layout="row">
+                <div flex="15">Company</div>
+                <div flex="35">{{ticket.company}}</div>
+                <div flex="15">Phone number</div>
+                <div flex="35">{{ticket.main_contact_phone_number}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Main Contact Persion</div>
+                <div flex="35">{{ticket.main_contact_person}}</div>
+                <div flex="15">Timezone</div>
+                <div flex="35"></div>
+            </div>
+            <div layout="row">
+                <div flex="15">Serial Number</div>
+                <div flex="35">{{ticket.serial_number_system_1}} {{ticket.serial_number_system_2}} {{ticket.serial_number_system_3}}</div>
+            </div>
+        </md-card-content>                                                                                                               
+    </md-card>
+
+    <md-card class="md-fn10-theme support-table">
+        <md-card-header class="support-table">
+            <md-card-header-text>
+                System Details
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-content style="overflow: hidden;">
+            <div layout="row">
+                <div flex="15">Hardware Platform</div>
+                <div flex="35">{{ticket.hardware_platform}}</div>
+                <div flex="15">Serial Number</div>
+                <div flex="35">{{ticket.serial_number_system_1}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Expansion Shelf</div>
+                <div flex="35">{{ticket.expansion_shelf}}</div>
+                <div flex="15">OS & Version</div>
+                <div flex="35">{{ticket.os}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Customer Internal Ticket #</div>
+                <div flex="35">{{ticket.customer_internal_ticket}}</div>
+                <div flex="15">System Location</div>
+                <div flex="35">{{ticket.system_location}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">RMA Parts</div>
+                <div flex="35"></div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+    <md-card class="md-fn10-theme support-table">
+        <md-card-header class="support-table">
+            <md-card-header-text>
+                Staff Notes
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-content style="overflow: hidden;">
+            <div layout="row">
+                <div flex="15">Sales Rep</div>
+                <div flex="35">{{ticket.sales_rep}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Order Number</div>
+                <div flex="35">{{ticket.order_number}}</div>
+                <div flex="15">Support Level</div>
+                <div flex="35">{{ticket.support_level}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Invoice Number</div>
+                <div flex="35">{{ticket.invoice_number}}</div>
+                <div flex="15">Software Support Expiration</div>
+                <div flex="35">{{ticket.software_support_expiration}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Hardware Support Expiration</div>
+                <div flex="35">{{ticket.hardware_support_expiration}}</div>
+                <div flex="15">Resolution type</div>
+                <div flex="35">{{ticket.resolution_type}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Bug Tickets Filed</div>
+                <div flex="35"></div>
+                <div flex="15">AAR Summary</div>
+                <div flex="35">{{ticket.course_of_action}}</div>
+            </div>
+        </md-card-content> 
+    </md-card>
+
+    <md-card class="md-fn10-theme support-table">
+        <md-card-header class="support-table">
+            <md-card-header-text>
+                RMA Ticket Submission
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-content style="overflow: hidden;">
+            <div layout="row">
+                <div flex="15">Contact Name</div>
+                <div flex="35">{{ticket.RMA_contact_name}}</div>
+                <div flex="15">Model Number</div>
+                <div flex="35">{{ticket.model_number}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Part Serial Number</div>
+                <div flex="35">{{ticket.part_serial_number}}</div>
+                <div flex="15">Chief Complaint</div>
+                <div flex="35">{{ticket.chief_complaint}}</div>
+            </div>
+            <div layout="row">
+                <div flex="15">Ship-To Address</div>
+                <div flex="35">{{ticket.RMA_ship_to_address}}</div>
+                <div flex="15">Special Instruction</div>
+                <div flex="35">{{ticket.special_instructions}}</div>
+            </div>
+        </md-card-content>
+    </md-card>
+    <md-button class="md-primary" ng-href="{{ticket.kayako_fusion_ticket_link}}" target="_blank">See more detail</md-button>
+</div>

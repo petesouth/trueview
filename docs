@@ -1,0 +1,21 @@
+###Admin Roles###
+1. TrueView Admin (Super admin)
+    - add new user
+    - add new server
+    - update user info 
+    - update server info
+    - delete user
+    - delete server
+
+2. Admin (for each organization)
+    - create new user for current organizaiton
+    - update user info for current organization
+    - update part of server info (server name, host name, ip address)
+    - delete user (affect current organizaion)
+
+3. Viewer (for each organization)
+    - view server info
+
+
+###Add Tags### 
+Add Tags for user

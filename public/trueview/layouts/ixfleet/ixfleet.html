@@ -1,0 +1,61 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    <div>
+        <h2>iX Gear (Registered Hardware)</h2>
+    </div>
+    <md-card class="md-fn10-theme dash-card">
+        <md-card-content class="total">
+            <div layout="row" layout-xs="column" layout-wrap>
+                <div ng-hide='isEmpty'> Please register your servers! </div>
+                <div flex="50" flex-xs="100" ng-repeat="server in servers">
+                    <md-card class="md-fn10-theme dash-sub-card">
+                        <md-card-header>
+                            <md-card-header-text class="md-fn10-theme">
+                                <span class="md-subtitle">TrueNAS {{server.model}}</span>
+                            </md-card-header-text>
+                        </md-card-header>
+
+                        <md-card-content>
+                            <div layout="row" layout-align="center center">
+                                <img ng-src="{{serverImage(server.model)}}" class="server-img"></img>
+                            </div>
+                            <div layout="row" layout-align="space-around center">
+                                <div flex="40">
+                                    <div layout="row" layout-align="end center">Support Contract</div>
+                                </div>
+                                <div flex="60">
+                                    <div layout="row" layout-align="center center">
+                                        <div layout="row" layout-align="end center">
+                                            <md-icon md-font-icon="fa fa-certificate" class="membership-{{server.contract_type}}" aria-label="contract_type" ng-hide="server.contract_type == null || server.contract_type == ''">
+                                                <md-tooltip>{{server.contract_type}}</md-tooltip>
+                                            </md-icon>
+                                            / {{ server.wnty_expire | amDifference : now : 'days' }} days remaining
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="space-around center">
+                                <div flex="40">
+                                    <div layout="row" layout-align="end center">Sales Contact Info</div>
+                                </div>
+                                <div flex="60">
+                                    <div layout="row" layout-align="center center">Name - Phone Number</div>
+                                </div>
+                            </div>
+                        </md-card-content>
+
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-subhead">SN: {{server.system_serial}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                    </md-card>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+    <md-button class="md-fab md-primary md-fab-top-right sticky-fab" aria-label="Add" ng-click="showAdd($event)">
+        <md-icon md-font-icon="icon-add" class="id"></md-icon>
+    </md-button>
+</div>

@@ -1,0 +1,19 @@
+.support-toolbar{
+    padding: 10px;
+}
+md-card.support-table {
+    box-shadow: 0 0 20px #151515;
+}
+
+md-card.support-table > md-card-header{
+    background: #2B3B45;
+}
+md-card.support-table > md-card-content {
+    background-color: #232323;
+}
+md-card.support-table > md-card-content > md-list {
+    padding-top: 0px;
+}
+.Closed {
+   // background-color: #2B3B45 !important;
+}

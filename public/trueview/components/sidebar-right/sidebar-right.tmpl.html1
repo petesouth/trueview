@@ -1,0 +1,90 @@
+<md-toolbar class="md-theme-light">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="close()">
+            <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            <md-tooltip>Close</md-tooltip>
+        </md-button>
+        <h2>
+            {{server.id}}
+        </h2>
+    </div>
+</md-toolbar>
+<md-content flex class="md-padding">
+    <div>
+        <h1> {{server.ip}} </h1>
+        <div layout="row">
+        	<div flex="">
+                	<div layout="row" layout-align="center center">CAPACITY</div>
+                        <iframe ng-src="{{trustedRealtimeCapacity()}}" height="150" width="100%" scrolling="no" seamless="seamless" frameBorder="0" style="margin-top: -2px; margin-left: -2px; padding-top: 50px;">
+                                </iframe>
+                </div>
+                <div flex="">
+	                <div layout="row" layout-align="center center">CPU</div>
+                        <iframe ng-src="{{trustedRealtimeCpu()}}" height="150" width="100%" scrolling="no" seamless="seamless" frameBorder="0" style="margin-top: -2px; margin-left: -2px; padding-top: 50px;">
+     	xx              </iframe>
+                </div>
+        </div>
+    </div>
+    
+
+    <md-tabs flex md-selected="activeTab" md-dynamic-height>
+        <md-tab label="Health">
+            <md-content class="md-padding">
+                <div class="toolbar-switcher" layout-align="end center" layout="row" flex>
+                    <div>Real-time</div>
+                    <div class="switch-padding">
+                        <md-switch ng-model="chart_type" aria-label="Chart" ng-true-value="'historical'" ng-false-value="'realtime'" class="md-primary">
+                        </md-switch>
+                    </div>
+                    <div>Historical</div>
+                </div>
+                <div ng-show="chart_type == 'realtime'">
+		    <div id="realtime_dashboard">
+                        <iframe ng-src="{{trustedRealtimeDashboard()}}" height="2500px" width="100%" scrolling="auto" seamless="seamless" frameBorder="0">
+                        </iframe>
+                    </div>
+                </div>
+                <div ng-show="chart_type == 'historical'">
+                    historical
+                    <iframe ng-src="{{trustedHistoricalDashboard()}}" height="2500px" width="100%" scrolling="auto" seamless="seamless" frameBorder="0"></iframe>
+                </div>
+            </md-content>
+        </md-tab>
+
+// commit tab task and alerts
+        <!--md-tab label="Tasks">
+            <md-content class="md-padding">
+                <div id="sidenav-search-box">
+                    <md-input-container flex="" class="search-box">
+                        <md-icon md-font-icon="icon-search" class="search-box-icon"></md-icon>
+                        <input type="text"></input>
+                    </md-input-container>
+                </div>
+                <md-list>
+                    <md-list-item class="list-header">
+                        <div layout="row" flex>
+                            <div flex="40">Task</div>
+                            <div flex="30">Date</div>
+                            <div flex="30">State</div>
+                        </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-list-item ng-repeat="task in tasks">
+                        <md-divider></md-divider>
+                        <div layout="row" flex>
+                            <div flex="40">{{ task.category }}</div>
+                            <div flex="30">{{ task.date }}</div>
+                            <div flex="30"><span ng-class="task.status == 'RUNNING'? 'label-running':task.status == 'COMPLETED'? 'label-completed':'label-failed'">{{task.status}}</span></div>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </md-tab>
+        <md-tab label="Alerts">
+            <md-content class="md-padding">
+                List alerts here!
+            </md-content>
+        </md-tab-->
+    </md-tabs>
+</md-content>
+

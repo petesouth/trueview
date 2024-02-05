@@ -1,0 +1,400 @@
+<div id="container" class="class="container-fluid">
+	<!-- Elastic JS Core-->
+	<script src="js/lib/elasticsearch-js/elasticsearch.jquery.js"></script>
+
+
+    <div class="row">
+        <div class="div_blank_double_spacer"></div>
+    </div>
+
+    <form>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Influx:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="influxdbserver" type="text" ng-model="chartBuilderFormData.influxdbserver">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent" >
+                <label>Elastic:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="elasticserver" type="text" ng-model="chartBuilderFormData.elasticserver">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>ElasticIndex:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="elasticindexname" class="over_select" ng-model="chartBuilderFormData.elasticindexname">
+                    <option ng-repeat="foundIndexName in existingIndices" title="{{foundIndexName}}">{{foundIndexName}}</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>ElasticIndexBeg:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="elasticIndexBeg" type="number" min="1" ng-model="chartBuilderFormData.elasticIndexBeg">
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>ElasticBatchSize:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="elasticBatchSize" type="number" min="1" ng-model="chartBuilderFormData.elasticBatchSize">
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Database:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="influx_db" class="over_select" ng-model="chartBuilderFormData.influx_db">
+                    <option ng-repeat="knownDatabase in knownDatabases" title="{{knownDatabase}}">{{knownDatabase}}</option>
+                </select>
+            </div>
+        </div>
+        
+        
+         <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>x_title:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="x_title" type="text" ng-model="chartBuilderFormData.x_title">
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>ValueColumnName:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="valueColumnName" type="text" ng-model="chartBuilderFormData.valueColumnName">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>hostserver:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="hostserver" class="over_select" ng-model="chartBuilderFormData.hostserver">
+                    <option ng-repeat="knownHostServer in knownServers" title="{{knownHostServer}}">{{knownHostServer}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Function Average:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="functionAverage" class="over_select" ng-model="chartBuilderFormData.functionAverage">
+                    <option ng-repeat="tfunctionAverage in functionAverages" title="{{tfunctionAverage}}">{{tfunctionAverage}}</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Number of Predicted Values:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="numberOfPredictedValues" type="number" min="1" ng-model="chartBuilderFormData.numberOfPredictedValues">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Seasonal Pattern:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="seasonalPattern" type="number" min="1" ng-model="chartBuilderFormData.seasonalPattern">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>GroupBy Number:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="groupByUnitNumber" type="number" min="1" ng-model="chartBuilderFormData.groupByUnitNumber">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>GroupBy:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="functionAverage" class="over_select" ng-model="chartBuilderFormData.groupBy">
+                    <option ng-repeat="tgroupBy in groupBys" value="{{tgroupBy.name}}">{{tgroupBy.label}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>StartDate:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="chartBuilderFormDataStartDateInput" type="text" ng-model="chartBuilderFormData.startDate">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>UI&nbsp;Type:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select class="over_select" ng-model="chartBuilderFormData.uiType">
+                    <option title="{{UI_TYPE_CHART}}">{{UI_TYPE_CHART}}</option>
+                    <option title="{{UI_TYPE_SPARKLINE}}">{{UI_TYPE_SPARKLINE}}</option>
+                    <option title="{{UI_TYPE_PARTIAL_PIE_CHART}}">{{UI_TYPE_PARTIAL_PIE_CHART}}</option>
+                    <option title="{{UI_TYPE_FULL_PIE_CHART}}">{{UI_TYPE_FULL_PIE_CHART}}</option>
+                    <option title="{{UI_TYPE_BAR_GAUGE_CHART}}">{{UI_TYPE_BAR_GAUGE_CHART}}</option>
+                    <option title="UI_TYPE_TEXT_PANEL">{{UI_TYPE_TEXT_PANEL}}</option>
+                    <option title="UI_TYPE_ELASTIC_PANEL">{{UI_TYPE_ELASTIC_PANEL}}</option>
+                    <option title="UI_TYPE_LIQUID_GAUGE">{{UI_TYPE_LIQUID_GAUGE}}</option>
+                </select>
+            </div>
+        </div>
+        
+         <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>displayReverse:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select class="over_select" ng-model="chartBuilderFormData.displayReverse">
+                    <option title="true">true</option>
+                    <option title="false">false</option>
+                    
+                </select>
+            </div>
+        </div>
+        
+         <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>showDates:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select class="over_select" ng-model="chartBuilderFormData.showDates">
+                    <option title="true">true</option>
+                    <option title="false">false</option>
+                    
+                </select>
+            </div>
+        </div>
+        
+         <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>showLables:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select class="over_select" ng-model="chartBuilderFormData.showLables">
+                    <option title="true">true</option>
+                    <option title="false">false</option>
+                    
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Chart Type:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="chartType" class="over_select" ng-model="chartBuilderFormData.chartType">
+                    <option ng-repeat="tChartType in chartTypes">{{tChartType}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Scheme:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select class="over_select" ng-model="chartBuilderFormData.schemeName">
+                    <option title="scheme01">scheme01</option>
+                    <option title="scheme02">scheme02</option>
+                    <option title="scheme03">scheme03</option>
+                    <option title="scheme04">scheme04</option>
+                    <option title="scheme05">scheme05</option>
+                    <option title="scheme06">scheme06</option>
+                    <option title="scheme07">scheme07</option>
+                    <option title="scheme08">scheme08</option>
+                    <option title="scheme09">scheme09</option>
+                    <option title="scheme10">scheme10</option>
+                    <option title="scheme11">scheme11</option>
+                    <option title="scheme12">scheme12</option>
+                    <option title="scheme13">scheme13</option>
+                    <option title="scheme14">scheme14</option>
+                    <option title="scheme15">scheme15</option>
+                    <option title="scheme16">scheme16</option>
+                    <option title="scheme17">scheme17</option>
+                    <option title="scheme18">scheme18</option>
+                    <option title="scheme19">scheme19</option>
+                    <option title="scheme20">scheme20</option>
+                    <option title="scheme21">scheme21</option>
+                    <option title="scheme22">scheme22</option>
+                    <option title="scheme23">scheme23</option>
+                    <option title="scheme24">scheme24</option>
+                    <option title="scheme25">scheme25</option>
+                    <option title="scheme26">scheme26</option>
+                    <option title="scheme27">scheme27</option>
+                    <option title="scheme28">scheme28</option>
+                    <option title="scheme29">scheme29</option>
+                    <option title="scheme30">scheme30</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Poll(ms):</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input type="number" ng-model="chartBuilderFormData.pollFrequency">
+            </div>
+        </div>
+		
+		<div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>PollSize:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input type="number" ng-model="chartBuilderFormData.pollSize">
+            </div>
+        </div>
+		
+		<div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>MaxVisiblePoints:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input type="number" ng-model="chartBuilderFormData.maxVisiblePoints">
+            </div>
+        </div>
+		
+		
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>MultiplyBy:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input type="number" ng-model="chartBuilderFormData.resultMultiplyBy">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>DivideBy:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input type="number" ng-model="chartBuilderFormData.resultDivideBy">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Metric(s):</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <select id="selectedMetricsDropdown" class="over_multi_select" style="height: 150px;"  multiple>
+                </select>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+
+        <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+
+        </div>
+        <div class="col-xs-8 col-md-8 col-lg-8">
+            <button id="buildMetrics" ng-click="buildMetrics()">Refresh</button>
+            <button id="initResetData" ng-click="initResetData()">Reset</button>
+            <button id="chartBuilderFormSubmit" ng-click="chartBuilderFormSubmit($event)">View</button>
+        </div>
+    </div>
+    
+    
+     <div class="row">
+        <div class="div_blank_double_spacer"></div>
+    </div>
+
+    <form>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+                <label>Influx Query:</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
+                <input id="runQuery" type="text" ng-model="chartBuilderFormData.runQuery">
+            </div>
+        </div>
+        
+    </form>
+
+    <div class="row">
+
+        <div class="col-xs-4 col-md-2 col-lg-2 form_lable_div_parent">
+
+        </div>
+        <div class="col-xs-8 col-md-8 col-lg-8">
+            <button id="runQuery" ng-click="runQuery()">runQuery</button>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="div_blank_double_spacer"></div>
+        <div class="div_blank_double_spacer"></div>
+    </div>
+
+    <div class="row">
+
+        <!--  Master Links -->
+        <div ng-if="trustedChartUrl" class=".col-md-12" style="padding-left: 40px;">
+
+
+            <div class="row">
+                <a href="{{trustedChartUrl}}" target="_blank">View External</a>
+            </div>
+
+            <div class="div_blank_double_spacer"></div>
+
+            <div id="iframe_parent_trusted_chart_url_ifrm" class="row grey_border" style="width: 100%;">
+                <!--
+                    <iframe id="trusted_chart_url_ifrm" height="500" width="100%" frameBorder="0"></iframe>    
+                -->
+            </div>
+
+            <div class="div_blank_double_spacer"></div>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="dashboard-container padded-content-page" layout="column">
+    
+	<md-card class="md-fn10-theme dash-table">
+        <md-card-header class="dash-table">
+            <md-card-header-text>
+                <div layout="row">
+                    <div flex="20">ISOs</div>
+                </div>
+            </md-card-header-text>
+        </md-card-header>
+ 
+        <md-card-content style="overflow: hidden;" ng-repeat="download in downloadData.downloads">
+            <div layout="row">
+                    <div flex="20">{{download.name}}</div>
+            </div>
+            <md-list>
+                <md-list-item ng-repeat="pathData in download.paths">
+                	<md-divider></md-divider>
+                    <div flex="50"><a href="/api/downloads/{{pathData.path}}">{{pathData.name}}</a></div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+
+    <div layout="row">
+    	<br/>
+	</div>
+
+    
+	<md-card class="md-fn10-theme dash-table">
+        <md-card-header class="dash-table">
+            <md-card-header-text>
+                <div layout="row">
+                    <div flex="20">Documentation</div>
+                </div>
+            </md-card-header-text>
+        </md-card-header>
+ 
+        <md-card-content style="overflow: hidden;" ng-repeat="download in downloadData.documents">
+            <div layout="row">
+                    <div flex="20">{{download.name}}</div>
+            </div>
+            <md-list>
+                <md-list-item ng-repeat="pathData in download.paths">
+                	<md-divider></md-divider>
+                    <div flex="50"><a href="/api/downloads/{{pathData.path}}">{{pathData.name}}</a></div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+	   
+</div>

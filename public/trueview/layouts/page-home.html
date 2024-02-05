@@ -1,0 +1,51 @@
+	<!--div ng-app="tvlogin" ng-class="bodyClasses" ng-controller="tvloginController" class="login"-->
+		<div id="login-view">
+			<md-content class="login-content autoScroll">
+				<div class="ix-logo">
+					<img src="/build/ix_logo.png">
+				</div>
+				<form class="form-horizontal" role="form" method="POST" ng-submit="login()">
+
+					<div class="input-container">
+						<md-input-container class="md-icon-float md-block">
+							<label>E-mail</label>
+							<md-icon md-font-icon="icon-perm-identity" class="name"></md-icon>
+							<input type="email" name="email" ng-model="email">
+
+							<span>	
+								<div ng-message="required"></div>
+							</span>
+						</md-input-container>
+
+
+					</div>
+
+					<div class="input-container">
+						<md-input-container class="md-block">
+							<label>Password</label>
+							<md-icon md-font-icon="icon-lock-outline" class="password"></md-icon>
+							<input type="password" name="password" ng-model="password">
+
+							<span>
+								<div ng-message="required"></div>
+							</span>
+						</md-input-container>
+					</div>
+
+					<div>
+						<md-checkbox name="remember">Remember Me</md-checkbox>
+
+					</div>
+
+					<div>
+						<!--div class="col-md-6 col-md-offset-4"-->
+						<div>
+							<md-button class="md-raised md-primary login-btn"  type="submit">Login</md-button><br>
+							<!--a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a-->
+							<a href="">Forgot Your Password?</a>
+						</div>
+					</div>
+				</form>
+			</md-content>
+		</div>
+	<!--/div-->

@@ -1,0 +1,80 @@
+<div class="dashboard-container padded-content-page" layout="column" style="min-width: 500px;" ng-cloak>
+    <div>
+        <h2>{{server.hostname}} - {{server.ip}}</h2>
+    </div>
+	
+	 <md-card class="md-fn10-theme dash-card">
+        <md-card-content class="total">
+     		<jsondashboard-component namerootid='"realtime"' dashboardpath="'/dashtemplates/singlesystem_realtime.json'", dashboardmap="dashboardMap"></jsondashboard-component>
+     	</md-card-content>
+     	
+     </md-card>
+    
+    <div layout="row">
+        <br/>
+    </div>
+	
+	 <div layout="row">
+        <br/>
+    </div>
+    
+	
+	
+	 <div layout="row">
+	 	<div layout="column" style="padding-right: 40px;">
+            <h2>Historic</h2>
+	    </div>
+        <div layout="column" style="padding: 20px;">
+        	<a href="javascript:void(0);" ng-click="changeGroupBy($event, BY_SECOND )">By Second</a>
+        </div>
+       <div layout="column" style="padding: 20px;">
+         	<a href="javascript:void(0);" ng-click="changeGroupBy($event, BY_MINUTE )">By Minute</a>
+        </div>
+       <div layout="column" style="padding: 20px;">
+         	<a href="javascript:void(0);" ng-click="changeGroupBy($event, BY_HOUR )">By Hour</a>
+        </div>
+       <div layout="column" style="padding: 20px;">
+         	<a href="javascript:void(0);" ng-click="changeGroupBy($event, BY_DAY )">By Day</a>
+        </div>
+        <div layout="column" style="padding: 20px;">
+        	<a href="javascript:void(0);" ng-click="changeGroupBy($event, BY_WEEK )">By Week</a>
+        </div>
+        <div layout="column" style="padding: 20px;">
+        	<a href="javascript:void(0);" ng-click="changeGroupBy($event, BY_MONTH )">By Month</a>
+        </div>
+     </div>
+	
+	<md-card class="md-fn10-theme dash-card">
+       <md-content>
+           <select  class="md-no-underline" style="background: black; width: 100%; overflow: hidden;" ng-change='selectDbName()'  ng-model="dbName">
+               <option ng-value="'collectd'" >collectd</option>
+               <option ng-value="'graphite'" >graphite</option>
+           </select>
+       </md-content>
+   </md-card>
+      
+  	<md-card class="md-fn10-theme dash-card">
+       <md-content>
+           <select  class="md-no-underline" style="background: black; width: 100%; overflow: hidden;" ng-change='selectedPluginChange()'  ng-model="selectedPluginName">
+               <option ng-repeat="plugin in pluginData.plugins" ng-value="plugin.pluginName"  >{{plugin.pluginName }}</option>
+           </select>
+       </md-content>
+   </md-card>
+    
+    
+    <md-card class="md-fn10-theme dash-card" ng-if="redrawMe">
+        <md-card-content class="total" style="min-width:800px;">
+     		<jsondashboard-component  namerootid='"historic"'  showtoolbar="true" renderedjson="currentSelectedDashPagination", dashboardmap="dashboardMap"></jsondashboard-component>
+     	</md-card-content>
+     </md-card>
+    
+      <div layout="row" layout-align="center center" class="dash-table"  ng-show="currentSelectedDash.rows.length > numPerPage" >
+            <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="selectedPluginChange()" max-size="1" items-per-page="numPerPage" class="pagination-sm" boundary-link-numbers="true"></ul>
+        </div>
+         
+     <div layout="row">
+        <br/>
+    </div>
+   
+   
+</div>

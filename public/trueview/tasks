@@ -1,0 +1,58 @@
+[  
+   {  
+      "id":1,
+      "date":"Jan 18 16:54:44",
+      "status":"RUNNING",
+      "category":"Replication",
+      "server":"facet.freehive.io",
+      "message":"Task content about Replication task"
+   },
+   {  
+      "id":2,
+      "date":"Apr 17 10:50:25",
+      "status":"COMPLETED",
+      "category":"Snapshot",
+      "server":"facet.freehive.io",
+      "message":"Task content about Snapshot task"
+   },
+   {  
+      "id":3,
+      "date":"Apr 18 14:32:24",
+      "status":"FAILED",
+      "category":"Backup",
+      "server":"lola_freenas",
+      "message":"Task content about Backup task"
+   },
+   {  
+      "id":4,
+      "date":"Apr 18 14:33:24",
+      "status":"RUNNING",
+      "category":"RSYNC",
+      "server":"lola_freenas",
+      "message":"Task content about RSYNC task"
+   },
+   {  
+      "id":5,
+      "date":"Apr 18 16:32:24",
+      "status":"COMPLETED",
+      "category":"Upgrade",
+      "server":"facet.freehive.io",
+      "message":"Task content about Upgrade task"
+   },
+   {  
+      "id":6,
+      "date":"Apr 18 16:42:24",
+      "status":"COMPLETED",
+      "category":"Compression",
+      "server":"facet.freehive.io",
+      "message":"Task content about Compression task"
+   },
+   {  
+      "id":7,
+      "date":"Apr 18 16:45:24",
+      "status":"COMPLETED",
+      "category":"Deduplication",
+      "server":"facet.freehive.io",
+      "message":"Task content about Deduplication task"
+   }
+]

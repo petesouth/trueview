@@ -1,0 +1,8 @@
+<md-button ng-if="::(user.role_id <= item.level)"  ng-click="openLink()" class="md-primary md-raised side-menu-link" ng-class="activeClass()">
+    <md-icon ng-if="::(item.icon !== undefined)" class="side-menu-icon" md-font-icon="{{::item.icon}}">
+    </md-icon>
+    <span translate>{{::item.name}}</span>
+    <div ng-show="::(item.name == 'Alerts')">
+        <i ng-model="alert_counts" class="alert-counts" ng-show="alert_count != 0">{{alert_count}}</i>
+    </div>
+</md-button>

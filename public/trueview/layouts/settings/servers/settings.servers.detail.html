@@ -1,0 +1,77 @@
+<div class="dashboard-container padded-content-page">
+    <div class="md-padding">
+        <md-card class="md-fn10-theme">
+            <md-toolbar class="md-theme-fn10 md-fn10-theme">
+                <h2 class="md-toolbar-tools">
+                    <span>Server Info Update</span>
+                </h2>
+            </md-toolbar>
+
+            <md-content class="md-theme-fn10 md-fn10-theme">
+                <form ng-submit="" name="userForm" class="md-padding">
+                    <div>
+                        <md-input-container layout="row">
+                            <label>Serial Number</label>
+                            <input ng-model="server.system_serial">
+                        </md-input-container>
+                        <md-input-container layout="row">
+                            <label>Server Model</label>
+                            <input ng-model="server.model">
+                        </md-input-container>
+                        <md-input-container layout="row">
+                            <label>Host Name</label>
+                            <input ng-model="server.hostname">
+                        </md-input-container>
+                        <md-input-container layout="row">
+                            <label>IP Address</label>
+                            <input ng-model="server.ip">
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="update_server(server)">Update</md-button>
+                        <md-button class="md-raised md-warn" ng-click="delete_server()">Delete</md-button>
+                    </div>
+                </form>
+            </md-content>
+
+        </md-card>
+        <!--md-card class="md-fn10-theme" class="md-padding">
+            <md-card-title>
+            <md-card-title-text>
+            <span class="md-headline">Server Info Update</span>
+            </md-card-title-text>
+            <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+            </md-card-title-media>
+            </md-card-title>
+
+            <md-card-content>
+            <div class="md-list-item-text">
+            <form name="userForm" ng-submit>
+            <md-input-container layout="row">
+            <label>Serial Number</label>
+            <input ng-model="server.system_serial">
+            </md-input-container>
+            <md-input-container layout="row">
+            <label>Server Name</label>
+            <input ng-model="server.model">
+            </md-input-container>
+            <md-input-container layout="row">
+            <label>Host Name</label>
+            <input ng-model="server.hostname">
+            </md-input-container>
+            <md-input-container layout="row">
+            <label>IP Address</label>
+            <input ng-model="server.ip">
+            </md-input-container>
+            </form>
+            </div>
+            </md-card-content>
+
+            <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="update_server(server)">Update</md-button>
+            <md-button class="md-raised md-warn" ng-click="delete_server()">Delete</md-button>
+            </md-card-actions>
+            </md-card-->
+    </div>
+</div>
